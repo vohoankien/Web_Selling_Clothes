@@ -1,0 +1,3 @@
+@Imports Web_Selling_Clothes.Areas.HelpPage.ModelDescriptions
+@ModelType SimpleTypeModelDescription
+@Model.Documentation
