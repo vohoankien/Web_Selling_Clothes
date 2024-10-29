@@ -30,10 +30,10 @@
         {
             this.label3 = new System.Windows.Forms.Label();
             this.txtTenDN = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblQuenMatKhau = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnDangNhap = new System.Windows.Forms.Button();
-            this.txtMatKhau1 = new ThuVien.ThietKeConTrols.txtMatKhau();
+            this.txtMatKhau = new ThuVien.ThietKeConTrols.txtMatKhau();
             this.SuspendLayout();
             // 
             // label3
@@ -54,16 +54,16 @@
             this.txtTenDN.Size = new System.Drawing.Size(173, 34);
             this.txtTenDN.TabIndex = 3;
             // 
-            // label4
+            // lblQuenMatKhau
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label4.Location = new System.Drawing.Point(77, 192);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(136, 20);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Quên mật khẩu ?";
+            this.lblQuenMatKhau.AutoSize = true;
+            this.lblQuenMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuenMatKhau.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblQuenMatKhau.Location = new System.Drawing.Point(77, 192);
+            this.lblQuenMatKhau.Name = "lblQuenMatKhau";
+            this.lblQuenMatKhau.Size = new System.Drawing.Size(136, 20);
+            this.lblQuenMatKhau.TabIndex = 5;
+            this.lblQuenMatKhau.Text = "Quên mật khẩu ?";
             // 
             // label2
             // 
@@ -84,23 +84,23 @@
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.UseVisualStyleBackColor = true;
             // 
-            // txtMatKhau1
+            // txtMatKhau
             // 
-            this.txtMatKhau1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMatKhau1.Location = new System.Drawing.Point(283, 130);
-            this.txtMatKhau1.Name = "txtMatKhau1";
-            this.txtMatKhau1.PasswordChar = '*';
-            this.txtMatKhau1.Size = new System.Drawing.Size(173, 34);
-            this.txtMatKhau1.TabIndex = 10;
+            this.txtMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMatKhau.Location = new System.Drawing.Point(283, 130);
+            this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.PasswordChar = '*';
+            this.txtMatKhau.Size = new System.Drawing.Size(173, 34);
+            this.txtMatKhau.TabIndex = 10;
             // 
             // DangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.txtMatKhau1);
+            this.Controls.Add(this.txtMatKhau);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblQuenMatKhau);
             this.Controls.Add(this.txtTenDN);
             this.Controls.Add(this.label3);
             this.Name = "DangNhap";
@@ -113,9 +113,9 @@
         #endregion
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTenDN;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblQuenMatKhau;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnDangNhap;
-        private ThietKeConTrols.txtMatKhau txtMatKhau1;
+        private ThietKeConTrols.txtMatKhau txtMatKhau;
     }
 }
