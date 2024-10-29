@@ -61,6 +61,11 @@ namespace DAL
             return BCrypt.Net.BCrypt.HashPassword(pass);
         }
 
+        public bool verifyPassword(string inputPassword, string hashedPassword)
+        {
+            return BCrypt.Net.BCrypt.Verify(inputPassword, hashedPassword);
+        }
+
 
         public bool insertTaiKhoan(taikhoanuser quyen)
         {
@@ -75,7 +80,13 @@ namespace DAL
                 return false;
             }
         }
-
+        public taikhoanuser findTaiKhoanTheoTen(string s)
+        {
+            var nq = (from n in ql.taikhoanusers
+                      where n.TENTK == s
+                      select n).FirstOrDefault();
+            return nq;
+        }
         public taikhoanuser findTaiKhoan(string s)
         {
             var nq = (from n in ql.taikhoanusers

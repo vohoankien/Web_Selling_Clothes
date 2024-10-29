@@ -26,6 +26,11 @@ namespace BLL
         {
             return dl.hashPassword(password);
         }
+
+        public bool verifyPassword(string pass, string pass2)
+        {
+            return dl.verifyPassword(pass, pass2);
+        }
         public bool insertTaiKhoan(taikhoanuser tk)
         {
             return dl.insertTaiKhoan(tk);
@@ -47,5 +52,9 @@ namespace BLL
             return dl.updateTaiKhoan(temp, nq);
         }
 
+        public taikhoanuser findTaiKhoanTheoTen(string s)
+        {
+            return dl.findTaiKhoanTheoTen(s);
+        }
     }
 }

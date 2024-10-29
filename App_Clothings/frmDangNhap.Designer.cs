@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dangNhap1 = new ThuVien.DangNhap();
+            this.ucDangNhap = new ThuVien.DangNhap();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // dangNhap1
+            // ucDangNhap
             // 
-            this.dangNhap1.Location = new System.Drawing.Point(12, 135);
-            this.dangNhap1.Name = "dangNhap1";
-            this.dangNhap1.Size = new System.Drawing.Size(540, 257);
-            this.dangNhap1.TabIndex = 0;
+            this.ucDangNhap.Location = new System.Drawing.Point(12, 111);
+            this.ucDangNhap.Name = "ucDangNhap";
+            this.ucDangNhap.Size = new System.Drawing.Size(540, 269);
+            this.ucDangNhap.TabIndex = 0;
             // 
             // label1
             // 
@@ -55,7 +55,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1036, 529);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dangNhap1);
+            this.Controls.Add(this.ucDangNhap);
             this.Name = "frmDangNhap";
             this.Text = "frmDangNhap";
             this.ResumeLayout(false);
@@ -65,7 +65,7 @@
 
         #endregion
 
-        private ThuVien.DangNhap dangNhap1;
+        private ThuVien.DangNhap ucDangNhap;
         private System.Windows.Forms.Label label1;
     }
 }
