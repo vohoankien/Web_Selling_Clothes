@@ -29,20 +29,18 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnDong = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
+            this.btnReport = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.btnReport = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnReport);
-            this.groupBox1.Controls.Add(this.btnDong);
-            this.groupBox1.Controls.Add(this.btnClear);
+            this.groupBox1.Controls.Add(this.btnRefresh);
             this.groupBox1.Controls.Add(this.btnSua);
             this.groupBox1.Controls.Add(this.btnXoa);
             this.groupBox1.Controls.Add(this.btnThem);
@@ -53,23 +51,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chức năng CURD";
             // 
-            // btnDong
+            // btnReport
             // 
-            this.btnDong.Location = new System.Drawing.Point(137, 110);
-            this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(75, 23);
-            this.btnDong.TabIndex = 5;
-            this.btnDong.Text = "Đóng";
-            this.btnDong.UseVisualStyleBackColor = true;
+            this.btnReport.Location = new System.Drawing.Point(137, 110);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(75, 23);
+            this.btnReport.TabIndex = 6;
+            this.btnReport.Text = "Report";
+            this.btnReport.UseVisualStyleBackColor = true;
             // 
-            // btnClear
+            // btnRefresh
             // 
-            this.btnClear.Location = new System.Drawing.Point(23, 110);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClear.TabIndex = 4;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnRefresh.Location = new System.Drawing.Point(23, 110);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.TabIndex = 4;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
             // 
             // btnSua
             // 
@@ -98,15 +96,6 @@
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             // 
-            // btnReport
-            // 
-            this.btnReport.Location = new System.Drawing.Point(249, 110);
-            this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(75, 23);
-            this.btnReport.TabIndex = 6;
-            this.btnReport.Text = "Report";
-            this.btnReport.UseVisualStyleBackColor = true;
-            // 
             // ChucNangNangCao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -123,8 +112,7 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnReport;
-        private System.Windows.Forms.Button btnDong;
-        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;

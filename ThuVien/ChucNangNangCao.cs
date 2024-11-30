@@ -18,14 +18,13 @@ namespace ThuVien
             this.btnThem.Click += BtnThem_Click;
             this.btnXoa.Click += BtnXoa_Click;
             this.btnSua.Click += BtnSua_Click;
-            this.btnClear.Click += BtnClear_Clicked;
-            this.btnDong.Click += BtnDong_Click;
+            this.btnRefresh.Click += BtnRefresh_Clicked;
             this.btnReport.Click += BtnReport_Click;
         }
         public event EventHandler BtnThemClicked;
         public event EventHandler BtnXoaClicked;
         public event EventHandler BtnSuaClicked;
-        public event EventHandler BtnClearClicked;
+        public event EventHandler BtnRefreshClicked;
         public event EventHandler BtnDongClicked;
         public event EventHandler BtnReportClicked;
 
@@ -33,16 +32,9 @@ namespace ThuVien
         {
             BtnReportClicked?.Invoke(this, EventArgs.Empty);
         }
-
-        private void BtnDong_Click(object sender, EventArgs e)
+        private void BtnRefresh_Clicked(object sender, EventArgs e)
         {
-            BtnDongClicked?.Invoke(this, EventArgs.Empty);
-
-        }
-
-        private void BtnClear_Clicked(object sender, EventArgs e)
-        {
-            BtnClearClicked?.Invoke(this, EventArgs.Empty);
+            BtnRefreshClicked?.Invoke(this, EventArgs.Empty);
 
         }
 

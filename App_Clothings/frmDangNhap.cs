@@ -45,9 +45,6 @@ namespace App_Clothings
             }    
         }
 
-        private void UcDangNhap_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

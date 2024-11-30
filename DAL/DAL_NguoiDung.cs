@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using DTO;
 namespace DAL
@@ -30,6 +32,22 @@ namespace DAL
                 return "ND001";
             }
         }
+
+        public IQueryable getAllNguoiDung()
+        {
+            var query = from tk in ql.nguoidungs
+                        select new
+                        {
+                            tk.MAND,
+                            tk.TENND,
+                            tk.EMAIL,
+                            tk.DIACHI,
+                            tk.SODIENTHOAI,
+                            tk.MAUSER
+                        };
+
+            return query;
+        }
         public bool insertNguoiDung(nguoidung quyen)
         {
             try
@@ -47,7 +65,7 @@ namespace DAL
         public nguoidung findNguoiDung(string s)
         {
             var nq = (from n in ql.nguoidungs
-                      where n.MAUSER == s
+                      where n.MAND == s
                       select n).FirstOrDefault();
             return nq;
         }
@@ -84,5 +102,9 @@ namespace DAL
                 return false;
             }
         }
+
+
+
+     
     }
 }

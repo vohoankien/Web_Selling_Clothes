@@ -34,11 +34,22 @@
     <Reference Include="BLL">
       <HintPath>..\BLL\bin\Debug\BLL.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Data.Desktop.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Drawing.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Images.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Messaging" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -65,12 +76,6 @@
     <Compile Include="DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoadDataGrid.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="LoadDataGrid.Designer.cs">
-      <DependentUpon>LoadDataGrid.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuanLyQuyen.cs">
       <SubType>UserControl</SubType>
@@ -84,6 +89,21 @@
     <Compile Include="QuenMK.Designer.cs">
       <DependentUpon>QuenMK.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThietKeConTrols\btnHinhAnh.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ThietKeConTrols\dtgvData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ThietKeConTrols\dtpkDateTimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ThietKeConTrols\lbTieuDe.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ThietKeConTrols\pictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ThietKeConTrols\txtEmail.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -93,7 +113,13 @@
     <Compile Include="ThietKeConTrols\txtMatKhau.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ThietKeConTrols\txtSo.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ThietKeConTrols\txtSoDienThoai.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ThietKeConTrols\txtTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
@@ -107,9 +133,7 @@
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoadDataGrid.resx">
-      <DependentUpon>LoadDataGrid.cs</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="QuanLyQuyen.resx">
       <DependentUpon>QuanLyQuyen.cs</DependentUpon>
     </EmbeddedResource>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,11 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ThuVien
+namespace App_Clothings
 {
-    public partial class LoadDataGrid : UserControl
+    public partial class frmHoaDon : DevExpress.XtraEditors.XtraForm
     {
-        public LoadDataGrid()
+        public frmHoaDon()
         {
             InitializeComponent();
         }

@@ -17,6 +17,11 @@ namespace BLL
             return dl.GenerateMaQuyen();
         }
 
+        public IQueryable getAllNguoiDung()
+        {
+            return dl.getAllNguoiDung();
+        }
+
         public bool insertNguoiDung(nguoidung nd)
         {
             return dl.insertNguoiDung(nd);

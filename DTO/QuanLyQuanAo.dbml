@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ql_quanao" Class="QuanLyQuanAoDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=MSI\MSSQLSERVER_2022;Initial Catalog=ql_quanao;Persist Security Info=True;User ID=sa;Trust Server Certificate=True" SettingsObjectName="DTO.Properties.Settings" SettingsPropertyName="ql_quanaoConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=MSI\MSSQLSERVER_2022;Initial Catalog=ql_quanao;Persist Security Info=True;User ID=sa;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="DTO.Properties.Settings" SettingsPropertyName="ql_quanaoConnectionString2" Provider="System.Data.SqlClient" />
   <Table Name="dbo.chitiethoadon" Member="chitiethoadons">
     <Type Name="chitiethoadon">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -18,11 +18,11 @@
   <Table Name="dbo.tonkho" Member="tonkhos">
     <Type Name="tonkho">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="MANDO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MAKHO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="MASP" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NgayNhap" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Association Name="kho_tonkho" Member="kho" ThisKey="MANDO" OtherKey="MANDO" Type="kho" IsForeignKey="true" />
+      <Column Name="SOLUONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NGAYNHAP" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="kho_tonkho" Member="kho" ThisKey="MAKHO" OtherKey="MAKHO" Type="kho" IsForeignKey="true" />
       <Association Name="sanpham_tonkho" Member="sanpham" ThisKey="MASP" OtherKey="MASP" Type="sanpham" IsForeignKey="true" />
     </Type>
   </Table>
@@ -86,9 +86,9 @@
   <Table Name="dbo.kho" Member="khos">
     <Type Name="kho">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="MANDO" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="TENNDO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="kho_tonkho" Member="tonkhos" ThisKey="MANDO" OtherKey="MANDO" Type="tonkho" />
+      <Column Name="MAKHO" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TENKHO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="kho_tonkho" Member="tonkhos" ThisKey="MAKHO" OtherKey="MAKHO" Type="tonkho" />
     </Type>
   </Table>
   <Table Name="dbo.khuyenmai" Member="khuyenmais">
@@ -159,34 +159,11 @@
       <Association Name="danhgia_phanhoi" Member="danhgia" ThisKey="MADANHGIA" OtherKey="MADANHGIA" Type="danhgia" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.sanpham" Member="sanphams">
-    <Type Name="sanpham">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="MASP" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="MALOAI" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="TENSANPHAM" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="GIA" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="CHATLIEU" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="MANH" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="HINHANH" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="MAKM" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Association Name="sanpham_chitiethoadon" Member="chitiethoadons" ThisKey="MASP" OtherKey="MASP" Type="chitiethoadon" />
-      <Association Name="sanpham_tonkho" Member="tonkhos" ThisKey="MASP" OtherKey="MASP" Type="tonkho" />
-      <Association Name="sanpham_giohang" Member="giohangs" ThisKey="MASP" OtherKey="MASP" Type="giohang" />
-      <Association Name="sanpham_hinhanh" Member="hinhanhs" ThisKey="MASP" OtherKey="MASP" Type="hinhanh" />
-      <Association Name="sanpham_motasanpham" Member="motasanphams" ThisKey="MASP" OtherKey="MASP" Type="motasanpham" />
-      <Association Name="sanpham_size" Member="sizes" ThisKey="MASP" OtherKey="MASP" Type="size" />
-      <Association Name="khuyenmai_sanpham" Member="khuyenmai" ThisKey="MAKM" OtherKey="MAKM" Type="khuyenmai" IsForeignKey="true" />
-      <Association Name="loaisanpham_sanpham" Member="loaisanpham" ThisKey="MALOAI" OtherKey="MALOAI" Type="loaisanpham" IsForeignKey="true" />
-      <Association Name="nhanhieu_sanpham" Member="nhanhieu" ThisKey="MANH" OtherKey="MANH" Type="nhanhieu" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.size" Member="sizes">
     <Type Name="size">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="SIZESP" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="MASP" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Association Name="sanpham_size" Member="sanpham" ThisKey="MASP" OtherKey="MASP" Type="sanpham" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.taikhoanuser" Member="taikhoanusers">
@@ -222,4 +199,30 @@
       <Association Name="taikhoanuser_thongtinadmin" Member="taikhoanuser" ThisKey="MAUSER" OtherKey="MAUSER" Type="taikhoanuser" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.sanpham" Member="sanphams">
+    <Type Name="sanpham">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MASP" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MALOAI" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TENSANPHAM" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="GIA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CHATLIEU" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="MANH" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="HINHANH" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MAKM" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="GIAGIAM" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="sanpham_chitiethoadon" Member="chitiethoadons" ThisKey="MASP" OtherKey="MASP" Type="chitiethoadon" />
+      <Association Name="sanpham_tonkho" Member="tonkhos" ThisKey="MASP" OtherKey="MASP" Type="tonkho" />
+      <Association Name="sanpham_giohang" Member="giohangs" ThisKey="MASP" OtherKey="MASP" Type="giohang" />
+      <Association Name="sanpham_hinhanh" Member="hinhanhs" ThisKey="MASP" OtherKey="MASP" Type="hinhanh" />
+      <Association Name="sanpham_motasanpham" Member="motasanphams" ThisKey="MASP" OtherKey="MASP" Type="motasanpham" />
+      <Association Name="khuyenmai_sanpham" Member="khuyenmai" ThisKey="MAKM" OtherKey="MAKM" Type="khuyenmai" IsForeignKey="true" />
+      <Association Name="loaisanpham_sanpham" Member="loaisanpham" ThisKey="MALOAI" OtherKey="MALOAI" Type="loaisanpham" IsForeignKey="true" />
+      <Association Name="nhanhieu_sanpham" Member="nhanhieu" ThisKey="MANH" OtherKey="MANH" Type="nhanhieu" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.TinhGiamGia" Method="TinhGiamGia" IsComposable="true">
+    <Parameter Name="MaSanPham" Parameter="maSanPham" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Double" />
+  </Function>
 </Database>

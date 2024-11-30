@@ -12,10 +12,10 @@ namespace ThuVien.ThietKeConTrols
         public txtSoDienThoai()
         {
             this.KeyPress += TxtSoDienThoai_KeyPress;
-            this.TextChanged += TxtSoDienThoai_TextChanged;
+            this.Leave += TxtSoDienThoai_Leave;
         }
 
-        private void TxtSoDienThoai_TextChanged(object sender, EventArgs e)
+        private void TxtSoDienThoai_Leave(object sender, EventArgs e)
         {
             if (this.Text.Length != 10)
             {
@@ -24,6 +24,7 @@ namespace ThuVien.ThietKeConTrols
             }
         }
 
+ 
         private void TxtSoDienThoai_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))

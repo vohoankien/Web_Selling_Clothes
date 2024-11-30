@@ -27,7 +27,7 @@ namespace App_Clothings
             this.ucQLQuyen.BtnSuaClicked += UcQLQuyen_BtnSuaClicked;
             this.dtgvQLTaiKhoan.CellClick += DtgvQLTaiKhoan_CellClick;
             this.ucChucNangNC.BtnThemClicked += UcChucNangNC_BtnThemClicked;
-            this.ucChucNangNC.BtnClearClicked += UcChucNangNC_BtnClearClicked;
+            this.ucChucNangNC.BtnRefreshClicked += UcChucNangNC_BtnRefreshClicked;
             this.ucChucNangNC.BtnXoaClicked += UcChucNangNC_BtnXoaClicked;
             this.ucChucNangNC.BtnSuaClicked += UcChucNangNC_BtnSuaClicked;
         }
@@ -113,22 +113,22 @@ namespace App_Clothings
             }
         }
 
-        private void UcChucNangNC_BtnClearClicked(object sender, EventArgs e)
+        private void UcChucNangNC_BtnRefreshClicked(object sender, EventArgs e)
         {
             
             txtMatKhau.Enabled = true;
             txtTenTK.Enabled = true;
-            clearTextBox();
             txtSoDienThoai.Enabled = true;
             txtHoTen.Enabled = true;
             txtEmail.Enabled = true;
             txtDiaChi.Enabled = true;
-            txtMaTK.Text = bll_TaiKhoan.createAutoMaQuyen();
+            clearTextBox();
 
         }
 
         private void UcChucNangNC_BtnThemClicked(object sender, EventArgs e)
         {
+            txtMaTK.Text = bll_TaiKhoan.createAutoMaQuyen();
             string maquyen = ucQLQuyen.ComboQuyen.SelectedValue.ToString();
             taikhoanuser tk = new taikhoanuser();
             tk.TENTK = txtTenTK.Text;
@@ -170,10 +170,11 @@ namespace App_Clothings
             txtMaTK.Clear();
             txtMatKhau.Clear();
             txtTenTK.Clear();
-            txtSoDienThoai.Clear();
             txtHoTen.Clear();
             txtEmail.Clear();
             txtDiaChi.Clear();
+            txtSoDienThoai.Clear();
+
         }
         private void DtgvQLTaiKhoan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -214,7 +215,6 @@ namespace App_Clothings
 
                 }
            
-
         }
 
         private void UcQLQuyen_BtnXoaClicked(object sender, EventArgs e)
@@ -252,8 +252,6 @@ namespace App_Clothings
                 ucQLQuyen.TenQuyen = "";
             }
         }
-
-       
 
        
 

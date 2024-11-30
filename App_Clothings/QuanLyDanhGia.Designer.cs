@@ -1,13 +1,13 @@
-﻿namespace ThuVien
+﻿namespace App_Clothings
 {
-    partial class LoadDataGrid
+    partial class QuanLyDanhGia
     {
-        /// <summary> 
+        /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,26 +20,38 @@
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+        #region Windows Form Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
-            // LoadDataGrid
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(44, 34);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(820, 341);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // QuanLyDanhGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "LoadDataGrid";
-            this.Size = new System.Drawing.Size(868, 422);
+            this.ClientSize = new System.Drawing.Size(1270, 578);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Name = "QuanLyDanhGia";
+            this.Text = "QuanLyDanhGia";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

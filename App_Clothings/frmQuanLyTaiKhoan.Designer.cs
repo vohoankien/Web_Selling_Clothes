@@ -30,6 +30,8 @@
         {
             this.dtgvQLTaiKhoan = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ucQLQuyen = new ThuVien.QuanLyQuyen();
+            this.ucChucNangNC = new ThuVien.ChucNangNangCao();
             this.txtMaTK = new System.Windows.Forms.TextBox();
             this.txtTenTK = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,8 +46,6 @@
             this.txtMatKhau = new ThuVien.ThietKeConTrols.txtMatKhau();
             this.txtHoTen = new ThuVien.ThietKeConTrols.txtHoTen();
             this.txtSoDienThoai = new ThuVien.ThietKeConTrols.txtSoDienThoai();
-            this.ucQLQuyen = new ThuVien.QuanLyQuyen();
-            this.ucChucNangNC = new ThuVien.ChucNangNangCao();
             this.txtEmail = new ThuVien.ThietKeConTrols.txtEmail();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvQLTaiKhoan)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -53,6 +53,7 @@
             // 
             // dtgvQLTaiKhoan
             // 
+            this.dtgvQLTaiKhoan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtgvQLTaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvQLTaiKhoan.Location = new System.Drawing.Point(17, 32);
             this.dtgvQLTaiKhoan.Name = "dtgvQLTaiKhoan";
@@ -63,6 +64,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.dtgvQLTaiKhoan);
             this.groupBox1.Controls.Add(this.ucQLQuyen);
             this.groupBox1.Controls.Add(this.ucChucNangNC);
@@ -73,8 +75,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách nhân viên";
             // 
+            // ucQLQuyen
+            // 
+            this.ucQLQuyen.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ucQLQuyen.Location = new System.Drawing.Point(647, 21);
+            this.ucQLQuyen.Name = "ucQLQuyen";
+            this.ucQLQuyen.Size = new System.Drawing.Size(349, 220);
+            this.ucQLQuyen.TabIndex = 9;
+            this.ucQLQuyen.TenQuyen = "";
+            // 
+            // ucChucNangNC
+            // 
+            this.ucChucNangNC.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ucChucNangNC.Location = new System.Drawing.Point(659, 232);
+            this.ucChucNangNC.Name = "ucChucNangNC";
+            this.ucChucNangNC.Size = new System.Drawing.Size(394, 201);
+            this.ucChucNangNC.TabIndex = 8;
+            // 
             // txtMaTK
             // 
+            this.txtMaTK.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtMaTK.Enabled = false;
             this.txtMaTK.Location = new System.Drawing.Point(143, 69);
             this.txtMaTK.Name = "txtMaTK";
@@ -83,6 +103,7 @@
             // 
             // txtTenTK
             // 
+            this.txtTenTK.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTenTK.Location = new System.Drawing.Point(143, 117);
             this.txtTenTK.Name = "txtTenTK";
             this.txtTenTK.Size = new System.Drawing.Size(176, 22);
@@ -90,6 +111,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(33, 75);
             this.label1.Name = "label1";
@@ -99,6 +121,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(33, 123);
             this.label2.Name = "label2";
@@ -108,6 +131,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(367, 75);
             this.label3.Name = "label3";
@@ -117,6 +141,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(367, 123);
             this.label4.Name = "label4";
@@ -126,6 +151,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(703, 75);
             this.label5.Name = "label5";
@@ -135,6 +161,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(703, 123);
             this.label6.Name = "label6";
@@ -144,6 +171,7 @@
             // 
             // txtDiaChi
             // 
+            this.txtDiaChi.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDiaChi.Enabled = false;
             this.txtDiaChi.Location = new System.Drawing.Point(813, 117);
             this.txtDiaChi.Name = "txtDiaChi";
@@ -152,6 +180,7 @@
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(703, 176);
             this.label7.Name = "label7";
@@ -160,6 +189,7 @@
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(703, 167);
             this.label8.Name = "label8";
@@ -169,13 +199,16 @@
             // 
             // txtMatKhau
             // 
+            this.txtMatKhau.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtMatKhau.Location = new System.Drawing.Point(468, 72);
             this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.PasswordChar = '*';
             this.txtMatKhau.Size = new System.Drawing.Size(176, 22);
             this.txtMatKhau.TabIndex = 26;
             // 
             // txtHoTen
             // 
+            this.txtHoTen.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtHoTen.Location = new System.Drawing.Point(468, 123);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(176, 22);
@@ -183,28 +216,15 @@
             // 
             // txtSoDienThoai
             // 
+            this.txtSoDienThoai.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSoDienThoai.Location = new System.Drawing.Point(813, 160);
             this.txtSoDienThoai.Name = "txtSoDienThoai";
             this.txtSoDienThoai.Size = new System.Drawing.Size(185, 22);
             this.txtSoDienThoai.TabIndex = 24;
             // 
-            // ucQLQuyen
-            // 
-            this.ucQLQuyen.Location = new System.Drawing.Point(647, 21);
-            this.ucQLQuyen.Name = "ucQLQuyen";
-            this.ucQLQuyen.Size = new System.Drawing.Size(349, 220);
-            this.ucQLQuyen.TabIndex = 9;
-            this.ucQLQuyen.TenQuyen = "";
-            // 
-            // ucChucNangNC
-            // 
-            this.ucChucNangNC.Location = new System.Drawing.Point(659, 232);
-            this.ucChucNangNC.Name = "ucChucNangNC";
-            this.ucChucNangNC.Size = new System.Drawing.Size(394, 201);
-            this.ucChucNangNC.TabIndex = 8;
-            // 
             // txtEmail
             // 
+            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtEmail.Location = new System.Drawing.Point(813, 69);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(185, 22);
