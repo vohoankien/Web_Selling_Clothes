@@ -69,6 +69,7 @@
     <Compile Include="BLL_Size.cs" />
     <Compile Include="BLL_TaiKhoan.cs" />
     <Compile Include="BLL_ThanhToan.cs" />
+    <Compile Include="BLL_ThongKe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

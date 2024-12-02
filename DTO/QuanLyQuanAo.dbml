@@ -226,4 +226,18 @@
     <Parameter Name="MaSanPham" Parameter="maSanPham" Type="System.String" DbType="VarChar(10)" />
     <Return Type="System.Double" />
   </Function>
+  <Function Name="dbo.proc_DanhSachSanPhamBanChay" Method="proc_DanhSachSanPhamBanChay">
+    <ElementType Name="proc_DanhSachSanPhamBanChayResult">
+      <Column Name="TENSANPHAM" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SoLuongMua" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.proc_ThongKeDoanhThuTheoNgay" Method="proc_ThongKeDoanhThuTheoNgay">
+    <Parameter Name="ngaybatdau" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ngayketthuc" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="proc_ThongKeDoanhThuTheoNgayResult">
+      <Column Name="Ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DoanhThuNgay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

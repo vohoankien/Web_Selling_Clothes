@@ -126,11 +126,11 @@
     <Compile Include="frmQuanLyTaiKhoan.Designer.cs">
       <DependentUpon>frmQuanLyTaiKhoan.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThongKeDoanhThu.cs">
+    <Compile Include="frmThongKeDT.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmThongKeDoanhThu.Designer.cs">
-      <DependentUpon>frmThongKeDoanhThu.cs</DependentUpon>
+    <Compile Include="frmThongKeDT.Designer.cs">
+      <DependentUpon>frmThongKeDT.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThuongHieu.cs">
       <SubType>Form</SubType>
@@ -190,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLyTaiKhoan.resx">
       <DependentUpon>frmQuanLyTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThongKeDT.resx">
+      <DependentUpon>frmThongKeDT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThuongHieu.resx">
       <DependentUpon>frmThuongHieu.cs</DependentUpon>
@@ -612,6 +615,11 @@
     <Content Include="Images\Indigo5.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\bar_32x321.png" />
+    <None Include="Resources\drilldownonseries_pie_32x32.png" />
+    <None Include="Resources\kpi_32x32.png" />
+    <None Include="Resources\3dcolumn_32x32.png" />
+    <None Include="Resources\bar_32x32.png" />
     <None Include="Resources\print_32x32.png" />
     <None Include="Resources\boorderitem_32x32.png" />
     <None Include="Resources\bocontact_32x32.png" />

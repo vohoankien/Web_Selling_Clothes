@@ -16,7 +16,7 @@ namespace App_Clothings
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmBanHang());
+            Application.Run(new frmThongKeDT());
         }
     }
 }

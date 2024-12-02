@@ -100,7 +100,7 @@
             this.barButtonItem1,
             this.barButtonItem2});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.Margin = new System.Windows.Forms.Padding(19, 19, 19, 19);
+            this.ribbon.Margin = new System.Windows.Forms.Padding(19);
             this.ribbon.MaxItemId = 17;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsMenuMinWidth = 1964;
@@ -366,7 +366,7 @@
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 701);
-            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(19, 19, 19, 19);
+            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(19);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
             this.ribbonStatusBar.Size = new System.Drawing.Size(970, 30);

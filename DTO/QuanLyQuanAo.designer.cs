@@ -287,6 +287,20 @@ namespace DTO
 		{
 			return ((System.Nullable<double>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maSanPham).ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.proc_DanhSachSanPhamBanChay")]
+		public ISingleResult<proc_DanhSachSanPhamBanChayResult> proc_DanhSachSanPhamBanChay()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<proc_DanhSachSanPhamBanChayResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.proc_ThongKeDoanhThuTheoNgay")]
+		public ISingleResult<proc_ThongKeDoanhThuTheoNgayResult> proc_ThongKeDoanhThuTheoNgay([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> ngaybatdau, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> ngayketthuc)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ngaybatdau, ngayketthuc);
+			return ((ISingleResult<proc_ThongKeDoanhThuTheoNgayResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tonkho")]
@@ -4852,6 +4866,94 @@ namespace DTO
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	public partial class proc_DanhSachSanPhamBanChayResult
+	{
+		
+		private string _TENSANPHAM;
+		
+		private System.Nullable<int> _SoLuongMua;
+		
+		public proc_DanhSachSanPhamBanChayResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENSANPHAM", DbType="NVarChar(MAX)")]
+		public string TENSANPHAM
+		{
+			get
+			{
+				return this._TENSANPHAM;
+			}
+			set
+			{
+				if ((this._TENSANPHAM != value))
+				{
+					this._TENSANPHAM = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLuongMua", DbType="Int")]
+		public System.Nullable<int> SoLuongMua
+		{
+			get
+			{
+				return this._SoLuongMua;
+			}
+			set
+			{
+				if ((this._SoLuongMua != value))
+				{
+					this._SoLuongMua = value;
+				}
+			}
+		}
+	}
+	
+	public partial class proc_ThongKeDoanhThuTheoNgayResult
+	{
+		
+		private System.Nullable<System.DateTime> _Ngay;
+		
+		private System.Nullable<int> _DoanhThuNgay;
+		
+		public proc_ThongKeDoanhThuTheoNgayResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ngay", DbType="Date")]
+		public System.Nullable<System.DateTime> Ngay
+		{
+			get
+			{
+				return this._Ngay;
+			}
+			set
+			{
+				if ((this._Ngay != value))
+				{
+					this._Ngay = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DoanhThuNgay", DbType="Int")]
+		public System.Nullable<int> DoanhThuNgay
+		{
+			get
+			{
+				return this._DoanhThuNgay;
+			}
+			set
+			{
+				if ((this._DoanhThuNgay != value))
+				{
+					this._DoanhThuNgay = value;
+				}
 			}
 		}
 	}
