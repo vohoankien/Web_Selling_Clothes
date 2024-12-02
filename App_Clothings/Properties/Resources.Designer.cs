@@ -73,6 +73,16 @@ namespace App_Clothings.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bocontact_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("bocontact_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bocustomer_16x16 {
             get {
                 object obj = ResourceManager.GetObject("bocustomer_16x16", resourceCulture);
@@ -93,6 +103,16 @@ namespace App_Clothings.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap boorderitem_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("boorderitem_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap boproductgroup_16x16 {
             get {
                 object obj = ResourceManager.GetObject("boproductgroup_16x16", resourceCulture);
@@ -106,6 +126,16 @@ namespace App_Clothings.Properties {
         internal static System.Drawing.Bitmap boproductgroup_32x32 {
             get {
                 object obj = ResourceManager.GetObject("boproductgroup_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap buy_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("buy_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,6 +183,16 @@ namespace App_Clothings.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap costanalysis_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("costanalysis_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap country_16x16 {
             get {
                 object obj = ResourceManager.GetObject("country_16x16", resourceCulture);
@@ -166,6 +206,16 @@ namespace App_Clothings.Properties {
         internal static System.Drawing.Bitmap country_32x32 {
             get {
                 object obj = ResourceManager.GetObject("country_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap currency_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("currency_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -287,6 +337,16 @@ namespace App_Clothings.Properties {
             get {
                 object obj = ResourceManager.GetObject("panelbottom", resourceCulture);
                 return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap print_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("print_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

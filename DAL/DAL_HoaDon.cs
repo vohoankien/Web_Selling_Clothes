@@ -57,15 +57,15 @@ namespace DAL
             }
         }
 
+        
 
 
-
-
-        public bool updateHoaDon(string tenlsp, hoadon lsp)
+        public bool updateHoaDon(DateTime ngay,int tinhtrang, hoadon lsp)
         {
             try
             {
-            //    lsp.TENHoaDon = tenlsp;
+                lsp.TINHTRANG = tinhtrang;
+                lsp.NGAYDATHANG = ngay;
                 ql.SubmitChanges();
                 return true;
             }
@@ -74,7 +74,13 @@ namespace DAL
                 return false;
             }
         }
-
+        public hoadon findHoaDon(string s)
+        {
+            var nq = (from n in ql.hoadons
+                      where n.MAHD == s
+                      select n).FirstOrDefault();
+            return nq;
+        }
 
 
     }

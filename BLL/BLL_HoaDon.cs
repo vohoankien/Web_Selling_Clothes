@@ -25,10 +25,15 @@ namespace BLL
             return dl.deleteHoaDon(lsp);
         }
 
-        //public bool updateHoaDon(string ten, hoadon lsp)
-        //{
-        //    return dl.updateHoaDon(ten, lsp);
-        //}
+        public hoadon findHoaDon(string s)
+        {
+            return dl.findHoaDon(s);
+        }
+
+        public bool updateHoaDon(DateTime ngay,int tt, hoadon lsp)
+        {
+            return dl.updateHoaDon(ngay,tt, lsp);
+        }
     }
 
 }

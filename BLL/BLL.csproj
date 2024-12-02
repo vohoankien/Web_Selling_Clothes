@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL_ChiTietHoaDon.cs" />
     <Compile Include="BLL_HoaDon.cs" />
     <Compile Include="BLL_Kho.cs" />
     <Compile Include="BLL_KhuyenMai.cs" />
@@ -65,7 +66,9 @@
     <Compile Include="BLL_NhanHieu.cs" />
     <Compile Include="BLL_PhanQuyen.cs" />
     <Compile Include="BLL_SanPham.cs" />
+    <Compile Include="BLL_Size.cs" />
     <Compile Include="BLL_TaiKhoan.cs" />
+    <Compile Include="BLL_ThanhToan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -117,7 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="documentManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <data name="customSqlQuery1.Sql" xml:space="preserve">
+    <value>SELECT 
+    sp.TENSANPHAM AS TenSanPham,
+    cthd.soluong AS SoLuong,
+    cthd.thanhtien AS ThanhTien
+FROM 
+    chitiethoadon cthd
+JOIN 
+    sanpham sp
+ON 
+    cthd.MASP = sp.MASP
+WHERE 
+    cthd.MAHD = @MaHD</value>
+  </data>
+  <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0iVGVuU2FuUGhhbSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJTb0x1b25nIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iVGhhbmhUaWVuIiBUeXBlPSJJbnQzMiIgLz48L1ZpZXc+PFZpZXcgTmFtZT0iUXVlcnlfMSI+PEZpZWxkIE5hbWU9IlRlblNhblBoYW0iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU29MdW9uZyIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlRoYW5oVGllbiIgVHlwZT0iSW50MzIiIC8+PC9WaWV3PjwvRGF0YVNldD4=</value>
+  </data>
 </root>

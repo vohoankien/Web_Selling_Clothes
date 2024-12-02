@@ -19,6 +19,9 @@ namespace App_Clothings
         BLL_NguoiDung bll_nguoidung = new BLL_NguoiDung();
         BLL_TaiKhoan bll_taikhoan = new BLL_TaiKhoan(); 
         BLL_HoaDon bll_hoadon = new BLL_HoaDon();
+        BLL_ChiTietHoaDon bll_chitiethoadon = new BLL_ChiTietHoaDon();
+        BLL_Size bll_size = new BLL_Size();
+
         string mahd;
         public frmBanHang()
         {
@@ -27,6 +30,79 @@ namespace App_Clothings
             this.dtgvKhachHang.CellClick += DtgvKhachHang_CellClick;
             this.btnXacNhan.Click += BtnXacNhan_Click;
             this.btnRefresh.Click += BtnRefresh_Click;
+            this.btnAdd.Click += BtnAdd_Click;
+ 
+            this.dtgvDanhSachDat.CellEndEdit += DtgvDanhSachDat_CellEndEdit;
+            this.btnMuaHang.Click += BtnMuaHang_Click;
+        }
+
+        private void BtnMuaHang_Click(object sender, EventArgs e)
+        {
+            frmHoaDon frm = new frmHoaDon();
+            frm.MaHD = mahd;
+            frm.MaKH = txtMaKhachHang.Text;
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private async void DtgvDanhSachDat_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            int columnIndex = e.ColumnIndex;
+            string macthd = dtgvDanhSachDat.Rows[rowIndex].Cells["MACTHD"].Value.ToString();
+            chitiethoadon cthd = bll_chitiethoadon.findCTHD(macthd);
+
+            if (dtgvDanhSachDat.Columns[columnIndex].Name == "SIZE")
+            {
+                string newValue = dtgvDanhSachDat.Rows[rowIndex].Cells[columnIndex].Value.ToString();
+                bool kq = await bll_chitiethoadon.UpdateSizeChiTietHoaDonAsync(newValue, cthd);
+                if (!kq)
+                {
+                    MessageBox.Show("Cập nhật size không thành công.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                MessageBox.Show("Cập nhật size thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loadSanPhamDat();
+            }
+            else if (dtgvDanhSachDat.Columns[columnIndex].Name == "SOLUONG")
+            {
+                int newValue = int.Parse(dtgvDanhSachDat.Rows[rowIndex].Cells[columnIndex].Value.ToString());
+                bool kq = await bll_chitiethoadon.updateSoLuongChiTietHoaDon(newValue, cthd);
+                if (!kq)
+                {
+                    MessageBox.Show("Cập nhật số lượng không thành công.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                MessageBox.Show("Cập nhật số lượng thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loadSanPhamDat();
+            }
+        }
+
+   
+
+        private void BtnAdd_Click(object sender, EventArgs e)
+        {
+            if(dtgvSanPham.SelectedRows.Count>0)
+            {
+                DataGridViewRow selectedRow = dtgvSanPham.SelectedRows[0];
+                chitiethoadon ct = new chitiethoadon();
+                ct.MACTHD = bll_chitiethoadon.GenerateMaChiTietHoaDon();
+                ct.MASP= selectedRow.Cells["MASP"].Value.ToString();
+                ct.MAHD = mahd;
+                ct.TINHTRANG = 1;
+                ct.SIZE = bll_size.getSizeFirst(ct.MASP);
+                ct.SOLUONG = 1;
+                bool kq = bll_chitiethoadon.insertChiTietHoaDon(ct);
+                if(!kq)
+                {
+                    MessageBox.Show("Thêm sản phẩm vào danh sách không thành công.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                MessageBox.Show("Xác nhận thông tin thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loadSanPhamDat();
+
+                btnMuaHang.Enabled = true;
+            }
         }
 
         private void BtnRefresh_Click(object sender, EventArgs e)
@@ -41,6 +117,10 @@ namespace App_Clothings
             dtgvDanhSachDat.Enabled = false;
             btnRemove.Enabled = false;
             btnAdd.Enabled = false;
+
+            hoadon hoadon = bll_hoadon.findHoaDon(mahd);
+            bll_hoadon.deleteHoaDon(hoadon);
+            btnXacNhan.Enabled = true;
         }
 
         private void BtnXacNhan_Click(object sender, EventArgs e)
@@ -91,20 +171,21 @@ namespace App_Clothings
                 return;
             }
             MessageBox.Show("Xác nhận thông tin thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            btnXacNhan.Enabled = false;
             mahd = hd.MAHD;
-
             txtHoTen.Enabled = false;
             txtEmail.Enabled = false;
             txtSoDienThoai.Enabled = false;
             txtTaiKhoan.Enabled = false;
             txtMaKhachHang.Enabled = false;
-            btnRefresh.Enabled = false;
+            btnRefresh.Enabled = true;
             dtgvSanPham.Enabled = true;
             dtgvDanhSachDat.Enabled = true;
             btnRemove.Enabled = true;
             btnAdd.Enabled = true;
             btnHuyDonHang.Enabled = true;
+            loadSanPhamDat();
+
         }
 
         private void DtgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -124,7 +205,6 @@ namespace App_Clothings
         {
             loadKhachHang();
             loadSanPham();
-            loadSanPhamDat();
         }
         public void loadKhachHang()
         {
@@ -151,7 +231,19 @@ namespace App_Clothings
         }
         public void loadSanPhamDat()
         {
+            dtgvDanhSachDat.DataSource = bll_chitiethoadon.getAllChiTietHoaDon(mahd);
+            dtgvDanhSachDat.Columns["MACTHD"].HeaderText = "Mã chi tiết hoá đơn";
+            dtgvDanhSachDat.Columns["MASP"].HeaderText = "Mã sản phẩm";
+            dtgvDanhSachDat.Columns["MAHD"].Visible = false;
+            dtgvDanhSachDat.Columns["SIZE"].HeaderText = "Size";
+            dtgvDanhSachDat.Columns["SIZE"].ReadOnly = false;
+            dtgvDanhSachDat.Columns["SOLUONG"].HeaderText = "Số lượng";
+            dtgvDanhSachDat.Columns["SOLUONG"].ReadOnly = false;
+            dtgvDanhSachDat.Columns["THANHTIEN"].HeaderText = "Thành tiền";
+            dtgvDanhSachDat.Columns["TINHTRANG"].Visible = false;
 
         }
+
+        
     }
 }
