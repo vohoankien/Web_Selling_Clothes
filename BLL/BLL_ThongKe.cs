@@ -20,5 +20,11 @@ namespace BLL
         {
             return dl.getDoanhThuTheoThoiGian(ngbd,ngkt);
         }
+
+
+        public List<hoadon> getKhachHangThongKe()
+        {
+            return dl.getKhachHangThongKe();
+        }
     }
 }

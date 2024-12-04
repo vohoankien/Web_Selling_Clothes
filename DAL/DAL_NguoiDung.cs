@@ -14,7 +14,7 @@ namespace DAL
         public DAL_NguoiDung() { }
         public string GenerateMaQuyen()
         {
-            var existingMaQuyen = ql.taikhoanusers.Select(k => k.MAUSER).ToList();
+            var existingMaQuyen = ql.nguoidungs.Select(k => k.MAND).ToList();
             int newCodeNumber = 1;
             if (existingMaQuyen.Count > 0)
             {
@@ -65,7 +65,7 @@ namespace DAL
         public nguoidung findNguoiDung(string s)
         {
             var nq = (from n in ql.nguoidungs
-                      where n.MAND == s
+                      where n.MAUSER == s
                       select n).FirstOrDefault();
             return nq;
         }

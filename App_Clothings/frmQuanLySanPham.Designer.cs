@@ -29,8 +29,15 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtKhuyenMai = new ThuVien.ThietKeConTrols.txtSo();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtHinhAnh = new ThuVien.ThietKeConTrols.txtTextBox();
             this.btnHinhAnh = new System.Windows.Forms.Button();
+            this.picSanPham = new ThuVien.ThietKeConTrols.pictureBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtChatLieu = new ThuVien.ThietKeConTrols.txtTextBox();
+            this.txtTenSanPham = new ThuVien.ThietKeConTrols.txtTextBox();
+            this.txtGia = new ThuVien.ThietKeConTrols.txtSo();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,17 +51,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.uc_ChucNangNangCao = new ThuVien.ChucNangNangCao();
-            this.txtHinhAnh = new ThuVien.ThietKeConTrols.txtTextBox();
-            this.picSanPham = new ThuVien.ThietKeConTrols.pictureBox();
-            this.txtChatLieu = new ThuVien.ThietKeConTrols.txtTextBox();
-            this.txtTenSanPham = new ThuVien.ThietKeConTrols.txtTextBox();
-            this.txtGia = new ThuVien.ThietKeConTrols.txtSo();
             this.dtgvSanPham = new ThuVien.ThietKeConTrols.dtgvData();
-            this.txtKhuyenMai = new ThuVien.ThietKeConTrols.txtSo();
-            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSanPham)).BeginInit();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvSanPham)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +81,31 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin sản phẩm";
             // 
+            // txtKhuyenMai
+            // 
+            this.txtKhuyenMai.Enabled = false;
+            this.txtKhuyenMai.Location = new System.Drawing.Point(169, 301);
+            this.txtKhuyenMai.Name = "txtKhuyenMai";
+            this.txtKhuyenMai.Size = new System.Drawing.Size(130, 22);
+            this.txtKhuyenMai.TabIndex = 25;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(28, 300);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(132, 22);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "Giá khuyến mãi";
+            // 
+            // txtHinhAnh
+            // 
+            this.txtHinhAnh.Location = new System.Drawing.Point(169, 258);
+            this.txtHinhAnh.Name = "txtHinhAnh";
+            this.txtHinhAnh.Size = new System.Drawing.Size(130, 22);
+            this.txtHinhAnh.TabIndex = 23;
+            // 
             // btnHinhAnh
             // 
             this.btnHinhAnh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -91,6 +116,17 @@
             this.btnHinhAnh.Text = "Hình ảnh";
             this.btnHinhAnh.UseVisualStyleBackColor = true;
             // 
+            // picSanPham
+            // 
+            this.picSanPham.BackgroundImage = global::App_Clothings.Properties.Resources.bg;
+            this.picSanPham.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picSanPham.Location = new System.Drawing.Point(337, 56);
+            this.picSanPham.Name = "picSanPham";
+            this.picSanPham.Size = new System.Drawing.Size(266, 247);
+            this.picSanPham.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSanPham.TabIndex = 21;
+            this.picSanPham.TabStop = false;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -100,6 +136,27 @@
             this.label4.Size = new System.Drawing.Size(80, 22);
             this.label4.TabIndex = 16;
             this.label4.Text = "Hình ảnh";
+            // 
+            // txtChatLieu
+            // 
+            this.txtChatLieu.Location = new System.Drawing.Point(170, 164);
+            this.txtChatLieu.Name = "txtChatLieu";
+            this.txtChatLieu.Size = new System.Drawing.Size(130, 22);
+            this.txtChatLieu.TabIndex = 15;
+            // 
+            // txtTenSanPham
+            // 
+            this.txtTenSanPham.Location = new System.Drawing.Point(169, 112);
+            this.txtTenSanPham.Name = "txtTenSanPham";
+            this.txtTenSanPham.Size = new System.Drawing.Size(130, 22);
+            this.txtTenSanPham.TabIndex = 14;
+            // 
+            // txtGia
+            // 
+            this.txtGia.Location = new System.Drawing.Point(169, 214);
+            this.txtGia.Name = "txtGia";
+            this.txtGia.Size = new System.Drawing.Size(130, 22);
+            this.txtGia.TabIndex = 13;
             // 
             // label7
             // 
@@ -220,49 +277,10 @@
             // 
             // uc_ChucNangNangCao
             // 
-            this.uc_ChucNangNangCao.Location = new System.Drawing.Point(670, 0);
+            this.uc_ChucNangNangCao.Location = new System.Drawing.Point(682, 50);
             this.uc_ChucNangNangCao.Name = "uc_ChucNangNangCao";
-            this.uc_ChucNangNangCao.Size = new System.Drawing.Size(394, 187);
+            this.uc_ChucNangNangCao.Size = new System.Drawing.Size(394, 113);
             this.uc_ChucNangNangCao.TabIndex = 4;
-            // 
-            // txtHinhAnh
-            // 
-            this.txtHinhAnh.Location = new System.Drawing.Point(169, 258);
-            this.txtHinhAnh.Name = "txtHinhAnh";
-            this.txtHinhAnh.Size = new System.Drawing.Size(130, 22);
-            this.txtHinhAnh.TabIndex = 23;
-            // 
-            // picSanPham
-            // 
-            this.picSanPham.BackgroundImage = global::App_Clothings.Properties.Resources.bg;
-            this.picSanPham.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picSanPham.Location = new System.Drawing.Point(337, 56);
-            this.picSanPham.Name = "picSanPham";
-            this.picSanPham.Size = new System.Drawing.Size(266, 247);
-            this.picSanPham.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picSanPham.TabIndex = 21;
-            this.picSanPham.TabStop = false;
-            // 
-            // txtChatLieu
-            // 
-            this.txtChatLieu.Location = new System.Drawing.Point(170, 164);
-            this.txtChatLieu.Name = "txtChatLieu";
-            this.txtChatLieu.Size = new System.Drawing.Size(130, 22);
-            this.txtChatLieu.TabIndex = 15;
-            // 
-            // txtTenSanPham
-            // 
-            this.txtTenSanPham.Location = new System.Drawing.Point(169, 112);
-            this.txtTenSanPham.Name = "txtTenSanPham";
-            this.txtTenSanPham.Size = new System.Drawing.Size(130, 22);
-            this.txtTenSanPham.TabIndex = 14;
-            // 
-            // txtGia
-            // 
-            this.txtGia.Location = new System.Drawing.Point(169, 214);
-            this.txtGia.Name = "txtGia";
-            this.txtGia.Size = new System.Drawing.Size(130, 22);
-            this.txtGia.TabIndex = 13;
             // 
             // dtgvSanPham
             // 
@@ -276,24 +294,6 @@
             this.dtgvSanPham.Size = new System.Drawing.Size(1016, 293);
             this.dtgvSanPham.TabIndex = 0;
             // 
-            // txtKhuyenMai
-            // 
-            this.txtKhuyenMai.Enabled = false;
-            this.txtKhuyenMai.Location = new System.Drawing.Point(169, 301);
-            this.txtKhuyenMai.Name = "txtKhuyenMai";
-            this.txtKhuyenMai.Size = new System.Drawing.Size(130, 22);
-            this.txtKhuyenMai.TabIndex = 25;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(28, 300);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(132, 22);
-            this.label9.TabIndex = 24;
-            this.label9.Text = "Giá khuyến mãi";
-            // 
             // frmQuanLySanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -304,12 +304,12 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dtgvSanPham);
             this.Name = "frmQuanLySanPham";
-            this.Text = "frmQuanLySanPham";
+            this.Text = "Quản lý sản phẩm";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSanPham)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSanPham)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvSanPham)).EndInit();
             this.ResumeLayout(false);
 

@@ -63,6 +63,7 @@
       <DependentUpon>QuanLyQuanAo.dbml</DependentUpon>
     </Compile>
     <Compile Include="sanpham.cs" />
+    <Compile Include="taikhoanuser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

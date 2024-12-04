@@ -18,6 +18,12 @@ namespace DAL
             return ql.nhomquyens.Select(k => k).ToList<nhomquyen>();
         }
 
+        public List<nhomquyen> getQuyenNhanVien()
+        {
+            return ql.nhomquyens.Where(k => k.TENQUYEN != "Khách Hàng").ToList();
+        }
+
+
         public bool insertQuyen(nhomquyen quyen)
         {
             try
@@ -35,11 +41,18 @@ namespace DAL
         public nhomquyen findQuyen(string s )
         {
             var nq = (from n in ql.nhomquyens
-                     where n.MAQUYEN == s
+                     where n.TENQUYEN == s
                      select n).FirstOrDefault();
             return nq;
         }
 
+        public nhomquyen findMaQuyen(string s)
+        {
+            var nq = (from n in ql.nhomquyens
+                      where n.MAQUYEN == s
+                      select n).FirstOrDefault();
+            return nq;
+        }
         public bool deleteQuyen(nhomquyen quyen)
         {
             try
@@ -53,6 +66,7 @@ namespace DAL
                 return false;
             }
         }
+
 
 
         public bool updateQuyen(string tenq,nhomquyen nhomquyen)

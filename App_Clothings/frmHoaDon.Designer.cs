@@ -30,7 +30,6 @@
         {
             this.btnReport = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.txtSo = new ThuVien.ThietKeConTrols.txtSo();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
@@ -62,6 +61,7 @@
             this.btnThanhToan = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.cbThanhToan = new System.Windows.Forms.ComboBox();
+            this.txtSo = new ThuVien.ThietKeConTrols.txtSo();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvHoaDonKhachHang)).BeginInit();
@@ -97,14 +97,6 @@
             this.groupControl3.Size = new System.Drawing.Size(408, 398);
             this.groupControl3.TabIndex = 3;
             this.groupControl3.Text = "Giao dịch gần đây";
-            // 
-            // txtSo
-            // 
-            this.txtSo.Enabled = false;
-            this.txtSo.Location = new System.Drawing.Point(173, 340);
-            this.txtSo.Name = "txtSo";
-            this.txtSo.Size = new System.Drawing.Size(203, 23);
-            this.txtSo.TabIndex = 4;
             // 
             // labelControl16
             // 
@@ -406,6 +398,14 @@
             this.cbThanhToan.Size = new System.Drawing.Size(121, 24);
             this.cbThanhToan.TabIndex = 0;
             // 
+            // txtSo
+            // 
+            this.txtSo.Enabled = false;
+            this.txtSo.Location = new System.Drawing.Point(173, 340);
+            this.txtSo.Name = "txtSo";
+            this.txtSo.Size = new System.Drawing.Size(203, 23);
+            this.txtSo.TabIndex = 4;
+            // 
             // frmHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -416,7 +416,7 @@
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.groupControl2);
             this.Name = "frmHoaDon";
-            this.Text = "frmHoaDon";
+            this.Text = "Hoá đơn khách hàng";
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
             this.groupControl3.PerformLayout();

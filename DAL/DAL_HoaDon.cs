@@ -30,6 +30,40 @@ namespace DAL
                 return "HD001";
             }
         }
+
+        public IQueryable getAllHoaDonKhachHang()
+        {
+            var hd = from h in ql.hoadons
+                     join nd in ql.nguoidungs on h.MAND equals nd.MAND
+                     select new
+                     {
+                         h.MAHD,
+                         nd.TENND,
+                         h.SOLUONG,
+                         h.NGAYDATHANG,
+                         h.TONGTIEN,
+                         h.TINHTRANG
+                     };
+            return hd;
+        }
+
+        public IQueryable findHoaDonNguoiDung(string ten)
+        {
+            var query = (from h in ql.hoadons
+                         join nd in ql.nguoidungs on h.MAND equals nd.MAND
+                         where nd.TENND.Contains(ten)
+                         select new
+                         {
+                             h.MAHD,
+                            nd.TENND,
+                             h.SOLUONG,
+                             h.NGAYDATHANG,
+                             h.TONGTIEN,
+                             h.TINHTRANG
+                         });
+            return query;
+        }
+
         public bool insertHoaDon(hoadon nh)
         {
             try

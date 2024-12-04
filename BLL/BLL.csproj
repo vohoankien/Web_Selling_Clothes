@@ -58,18 +58,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL_ChiTietHoaDon.cs" />
+    <Compile Include="BLL_DanhGia.cs" />
     <Compile Include="BLL_HoaDon.cs" />
-    <Compile Include="BLL_Kho.cs" />
     <Compile Include="BLL_KhuyenMai.cs" />
     <Compile Include="BLL_LoaiSanPham.cs" />
     <Compile Include="BLL_NguoiDung.cs" />
     <Compile Include="BLL_NhanHieu.cs" />
+    <Compile Include="BLl_PhanHoi.cs" />
     <Compile Include="BLL_PhanQuyen.cs" />
     <Compile Include="BLL_SanPham.cs" />
     <Compile Include="BLL_Size.cs" />
     <Compile Include="BLL_TaiKhoan.cs" />
     <Compile Include="BLL_ThanhToan.cs" />
     <Compile Include="BLL_ThongKe.cs" />
+    <Compile Include="BLL_ThongTinAdmin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

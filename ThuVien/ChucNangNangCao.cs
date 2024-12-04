@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace ThuVien
 {
-    public partial class ChucNangNangCao : UserControl
+    public partial class ChucNangNangCao : DevExpress.XtraEditors.XtraUserControl
     {
         public ChucNangNangCao()
         {
@@ -54,8 +55,6 @@ namespace ThuVien
             BtnThemClicked?.Invoke(this, EventArgs.Empty);
 
         }
-
-       
 
     }
 }

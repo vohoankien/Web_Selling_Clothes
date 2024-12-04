@@ -28,93 +28,90 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnReport = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.btnReport = new DevExpress.XtraEditors.SimpleButton();
+            this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
+            this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSua = new DevExpress.XtraEditors.SimpleButton();
+            this.btnThem = new DevExpress.XtraEditors.SimpleButton();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // groupControl1
             // 
-            this.groupBox1.Controls.Add(this.btnReport);
-            this.groupBox1.Controls.Add(this.btnRefresh);
-            this.groupBox1.Controls.Add(this.btnSua);
-            this.groupBox1.Controls.Add(this.btnXoa);
-            this.groupBox1.Controls.Add(this.btnThem);
-            this.groupBox1.Location = new System.Drawing.Point(13, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(360, 157);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Chức năng CURD";
+            this.groupControl1.CaptionImageOptions.Image = global::ThuVien.Properties.Resources.iconsettrafficlights4_32x32;
+            this.groupControl1.Controls.Add(this.btnReport);
+            this.groupControl1.Controls.Add(this.btnRefresh);
+            this.groupControl1.Controls.Add(this.btnXoa);
+            this.groupControl1.Controls.Add(this.btnSua);
+            this.groupControl1.Controls.Add(this.btnThem);
+            this.groupControl1.Location = new System.Drawing.Point(3, 3);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(368, 92);
+            this.groupControl1.TabIndex = 0;
+            this.groupControl1.Text = "Controls";
             // 
             // btnReport
             // 
-            this.btnReport.Location = new System.Drawing.Point(137, 110);
+            this.btnReport.ImageOptions.Image = global::ThuVien.Properties.Resources.exporttomht_32x32;
+            this.btnReport.Location = new System.Drawing.Point(311, 40);
             this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(75, 23);
-            this.btnReport.TabIndex = 6;
-            this.btnReport.Text = "Report";
-            this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Size = new System.Drawing.Size(38, 34);
+            this.btnReport.TabIndex = 17;
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(23, 110);
+            this.btnRefresh.ImageOptions.Image = global::ThuVien.Properties.Resources.convert_32x32;
+            this.btnRefresh.Location = new System.Drawing.Point(238, 40);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
-            this.btnRefresh.TabIndex = 4;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            // 
-            // btnSua
-            // 
-            this.btnSua.Location = new System.Drawing.Point(249, 53);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(75, 23);
-            this.btnSua.TabIndex = 3;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnRefresh.Size = new System.Drawing.Size(38, 34);
+            this.btnRefresh.TabIndex = 16;
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(137, 53);
+            this.btnXoa.ImageOptions.Image = global::ThuVien.Properties.Resources.cancel_32x32;
+            this.btnXoa.Location = new System.Drawing.Point(91, 40);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 23);
-            this.btnXoa.TabIndex = 2;
-            this.btnXoa.Text = "Xoá";
-            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Size = new System.Drawing.Size(38, 34);
+            this.btnXoa.TabIndex = 15;
+            // 
+            // btnSua
+            // 
+            this.btnSua.ImageOptions.Image = global::ThuVien.Properties.Resources.edit_32x32;
+            this.btnSua.Location = new System.Drawing.Point(164, 40);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(38, 34);
+            this.btnSua.TabIndex = 14;
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(23, 53);
+            this.btnThem.ImageOptions.Image = global::ThuVien.Properties.Resources.insert_32x32;
+            this.btnThem.Location = new System.Drawing.Point(22, 40);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(75, 23);
-            this.btnThem.TabIndex = 1;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Size = new System.Drawing.Size(38, 34);
+            this.btnThem.TabIndex = 13;
             // 
             // ChucNangNangCao
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupControl1);
             this.Name = "ChucNangNangCao";
-            this.Size = new System.Drawing.Size(394, 187);
-            this.groupBox1.ResumeLayout(false);
+            this.Size = new System.Drawing.Size(377, 98);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnReport;
-        private System.Windows.Forms.Button btnRefresh;
-        private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnThem;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraEditors.SimpleButton btnReport;
+        private DevExpress.XtraEditors.SimpleButton btnRefresh;
+        private DevExpress.XtraEditors.SimpleButton btnXoa;
+        private DevExpress.XtraEditors.SimpleButton btnSua;
+        private DevExpress.XtraEditors.SimpleButton btnThem;
     }
 }

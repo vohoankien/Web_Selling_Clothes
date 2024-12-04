@@ -41,6 +41,7 @@ namespace BLL
             return dl.findTaiKhoan(s);
         }
 
+
         public bool deleteTaiKhoan(taikhoanuser tk)
         {
             return dl.deleteTaiKhoan(tk) ;
@@ -55,6 +56,11 @@ namespace BLL
         public taikhoanuser findTaiKhoanTheoTen(string s)
         {
             return dl.findTaiKhoanTheoTen(s);
+        }
+
+        public taikhoanuser findTaiKhoanTheoTenvaEmail(string s)
+        {
+            return dl.findTaiKhoanTheoTenvaEmail(s);
         }
     }
 }

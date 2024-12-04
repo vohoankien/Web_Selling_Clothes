@@ -26,8 +26,8 @@ namespace DTO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MSI\\MSSQLSERVER_2022;Initial Catalog=ql_quanao;Persist Security Info=" +
-            "True;User ID=sa;Password=123;Encrypt=False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=THANHTRIEUMIKE;Initial Catalog=ql_quanao;Integrated Security=True;Tru" +
+            "st Server Certificate=True;User ID=sa;Password=123;")]
         public string ql_quanaoConnectionString {
             get {
                 return ((string)(this["ql_quanaoConnectionString"]));
@@ -37,8 +37,8 @@ namespace DTO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MSI\\MSSQLSERVER_2022;Initial Catalog=ql_quanao;Persist Security Info=" +
-            "True;User ID=sa;Password=123;TrustServerCertificate=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=THANHTRIEUMIKE;Initial Catalog=ql_quanao;Integrated Security=True;Tru" +
+            "st Server Certificate=True;User ID=sa;Password=123;")]
         public string ql_quanaoConnectionString1 {
             get {
                 return ((string)(this["ql_quanaoConnectionString1"]));
@@ -48,11 +48,22 @@ namespace DTO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MSI\\MSSQLSERVER_2022;Initial Catalog=ql_quanao;Persist Security Info=" +
-            "True;User ID=sa;Password=123;Encrypt=True;TrustServerCertificate=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=THANHTRIEUMIKE;Initial Catalog=ql_quanao;Integrated Security=True;Tru" +
+            "st Server Certificate=True;User ID=sa;Password=123;")]
         public string ql_quanaoConnectionString2 {
             get {
                 return ((string)(this["ql_quanaoConnectionString2"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=THANHTRIEUMIKE;Initial Catalog=ql_quanao;Integrated Security=True;Enc" +
+            "rypt=True;TrustServerCertificate=True")]
+        public string ql_quanaoConnectionString3 {
+            get {
+                return ((string)(this["ql_quanaoConnectionString3"]));
             }
         }
     }

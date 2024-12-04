@@ -29,11 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dtgvKhachHang = new ThuVien.ThietKeConTrols.dtgvData();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dtgvSanPham = new ThuVien.ThietKeConTrols.dtgvData();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dtgvDanhSachDat = new ThuVien.ThietKeConTrols.dtgvData();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btnHuyDonHang = new System.Windows.Forms.Button();
             this.btnMuaHang = new System.Windows.Forms.Button();
@@ -48,18 +45,21 @@
             this.txtTaiKhoan = new System.Windows.Forms.TextBox();
             this.btnXacNhan = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtEmail = new ThuVien.ThietKeConTrols.txtEmail();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.dtgvDanhSachDat = new ThuVien.ThietKeConTrols.dtgvData();
+            this.dtgvSanPham = new ThuVien.ThietKeConTrols.dtgvData();
+            this.dtgvKhachHang = new ThuVien.ThietKeConTrols.dtgvData();
+            this.txtEmail = new ThuVien.ThietKeConTrols.txtEmail();
             this.txtSoDienThoai = new ThuVien.ThietKeConTrols.txtSoDienThoai();
             this.txtHoTen = new ThuVien.ThietKeConTrols.txtTextBox();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvKhachHang)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvSanPham)).BeginInit();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvDanhSachDat)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvDanhSachDat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvSanPham)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvKhachHang)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox3
@@ -67,22 +67,10 @@
             this.groupBox3.Controls.Add(this.dtgvKhachHang);
             this.groupBox3.Location = new System.Drawing.Point(29, 200);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(746, 247);
+            this.groupBox3.Size = new System.Drawing.Size(1016, 247);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông tin khách hàng";
-            // 
-            // dtgvKhachHang
-            // 
-            this.dtgvKhachHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvKhachHang.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dtgvKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvKhachHang.Location = new System.Drawing.Point(15, 35);
-            this.dtgvKhachHang.Name = "dtgvKhachHang";
-            this.dtgvKhachHang.RowHeadersWidth = 51;
-            this.dtgvKhachHang.RowTemplate.Height = 24;
-            this.dtgvKhachHang.Size = new System.Drawing.Size(599, 197);
-            this.dtgvKhachHang.TabIndex = 4;
             // 
             // groupBox2
             // 
@@ -94,19 +82,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách sản phẩm";
             // 
-            // dtgvSanPham
-            // 
-            this.dtgvSanPham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvSanPham.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dtgvSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvSanPham.Enabled = false;
-            this.dtgvSanPham.Location = new System.Drawing.Point(16, 22);
-            this.dtgvSanPham.Name = "dtgvSanPham";
-            this.dtgvSanPham.RowHeadersWidth = 51;
-            this.dtgvSanPham.RowTemplate.Height = 24;
-            this.dtgvSanPham.Size = new System.Drawing.Size(535, 185);
-            this.dtgvSanPham.TabIndex = 0;
-            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.dtgvDanhSachDat);
@@ -116,19 +91,6 @@
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Danh sách sản phẩm đặt";
-            // 
-            // dtgvDanhSachDat
-            // 
-            this.dtgvDanhSachDat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvDanhSachDat.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dtgvDanhSachDat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvDanhSachDat.Enabled = false;
-            this.dtgvDanhSachDat.Location = new System.Drawing.Point(27, 22);
-            this.dtgvDanhSachDat.Name = "dtgvDanhSachDat";
-            this.dtgvDanhSachDat.RowHeadersWidth = 51;
-            this.dtgvDanhSachDat.RowTemplate.Height = 24;
-            this.dtgvDanhSachDat.Size = new System.Drawing.Size(317, 185);
-            this.dtgvDanhSachDat.TabIndex = 5;
             // 
             // groupBox5
             // 
@@ -272,13 +234,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
             // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(130, 120);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(147, 23);
-            this.txtEmail.TabIndex = 18;
-            // 
             // btnRefresh
             // 
             this.btnRefresh.Location = new System.Drawing.Point(612, 94);
@@ -287,6 +242,51 @@
             this.btnRefresh.TabIndex = 17;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
+            // 
+            // dtgvDanhSachDat
+            // 
+            this.dtgvDanhSachDat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvDanhSachDat.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtgvDanhSachDat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvDanhSachDat.Enabled = false;
+            this.dtgvDanhSachDat.Location = new System.Drawing.Point(27, 22);
+            this.dtgvDanhSachDat.Name = "dtgvDanhSachDat";
+            this.dtgvDanhSachDat.RowHeadersWidth = 51;
+            this.dtgvDanhSachDat.RowTemplate.Height = 24;
+            this.dtgvDanhSachDat.Size = new System.Drawing.Size(317, 185);
+            this.dtgvDanhSachDat.TabIndex = 5;
+            // 
+            // dtgvSanPham
+            // 
+            this.dtgvSanPham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvSanPham.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtgvSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvSanPham.Enabled = false;
+            this.dtgvSanPham.Location = new System.Drawing.Point(16, 22);
+            this.dtgvSanPham.Name = "dtgvSanPham";
+            this.dtgvSanPham.RowHeadersWidth = 51;
+            this.dtgvSanPham.RowTemplate.Height = 24;
+            this.dtgvSanPham.Size = new System.Drawing.Size(535, 185);
+            this.dtgvSanPham.TabIndex = 0;
+            // 
+            // dtgvKhachHang
+            // 
+            this.dtgvKhachHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvKhachHang.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtgvKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvKhachHang.Location = new System.Drawing.Point(15, 35);
+            this.dtgvKhachHang.Name = "dtgvKhachHang";
+            this.dtgvKhachHang.RowHeadersWidth = 51;
+            this.dtgvKhachHang.RowTemplate.Height = 24;
+            this.dtgvKhachHang.Size = new System.Drawing.Size(966, 197);
+            this.dtgvKhachHang.TabIndex = 4;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(130, 120);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(147, 23);
+            this.txtEmail.TabIndex = 18;
             // 
             // txtSoDienThoai
             // 
@@ -315,16 +315,16 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmBanHang";
-            this.Text = "frmBanHang";
+            this.Text = "Quản lý bán hàng";
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvKhachHang)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvSanPham)).EndInit();
             this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvDanhSachDat)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvDanhSachDat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvSanPham)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvKhachHang)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -5,26 +5,34 @@
     <Setting Name="ql_quanaoConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
-  &lt;ConnectionString&gt;Data Source=MSI\MSSQLSERVER_2022;Initial Catalog=ql_quanao;Persist Security Info=True;User ID=sa;Password=123;Encrypt=False&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=THANHTRIEUMIKE;Initial Catalog=ql_quanao;Integrated Security=True;Trust Server Certificate=True;User ID=sa;Password=123;&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=MSI\MSSQLSERVER_2022;Initial Catalog=ql_quanao;Persist Security Info=True;User ID=sa;Password=123;Encrypt=False</Value>
+      <Value Profile="(Default)">Data Source=THANHTRIEUMIKE;Initial Catalog=ql_quanao;Integrated Security=True;Trust Server Certificate=True;User ID=sa;Password=123;</Value>
     </Setting>
     <Setting Name="ql_quanaoConnectionString1" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
-  &lt;ConnectionString&gt;Data Source=MSI\MSSQLSERVER_2022;Initial Catalog=ql_quanao;Persist Security Info=True;User ID=sa;Password=123;TrustServerCertificate=True&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=THANHTRIEUMIKE;Initial Catalog=ql_quanao;Integrated Security=True;Trust Server Certificate=True;User ID=sa;Password=123;&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=MSI\MSSQLSERVER_2022;Initial Catalog=ql_quanao;Persist Security Info=True;User ID=sa;Password=123;TrustServerCertificate=True</Value>
+      <Value Profile="(Default)">Data Source=THANHTRIEUMIKE;Initial Catalog=ql_quanao;Integrated Security=True;Trust Server Certificate=True;User ID=sa;Password=123;</Value>
     </Setting>
     <Setting Name="ql_quanaoConnectionString2" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
-  &lt;ConnectionString&gt;Data Source=MSI\MSSQLSERVER_2022;Initial Catalog=ql_quanao;Persist Security Info=True;User ID=sa;Password=123;Encrypt=True;TrustServerCertificate=True&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=THANHTRIEUMIKE;Initial Catalog=ql_quanao;Integrated Security=True;Trust Server Certificate=True;User ID=sa;Password=123;&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=MSI\MSSQLSERVER_2022;Initial Catalog=ql_quanao;Persist Security Info=True;User ID=sa;Password=123;Encrypt=True;TrustServerCertificate=True</Value>
+      <Value Profile="(Default)">Data Source=THANHTRIEUMIKE;Initial Catalog=ql_quanao;Integrated Security=True;Trust Server Certificate=True;User ID=sa;Password=123;</Value>
+    </Setting>
+    <Setting Name="ql_quanaoConnectionString3" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionString&gt;Data Source=THANHTRIEUMIKE;Initial Catalog=ql_quanao;Integrated Security=True;Encrypt=True;TrustServerCertificate=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=THANHTRIEUMIKE;Initial Catalog=ql_quanao;Integrated Security=True;Encrypt=True;TrustServerCertificate=True</Value>
     </Setting>
   </Settings>
 </SettingsFile>
