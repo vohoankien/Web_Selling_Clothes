@@ -11,13 +11,7 @@ namespace DAL
         QuanLyQuanAoDataContext ql = new QuanLyQuanAoDataContext(); 
         public DAL_Size() { }
 
-        public IQueryable getALLSize(string masp)
-        {
-            var size = from s in ql.sizes
-                       where s.MASP == masp
-                       select s;
-            return size;
-        }
+       
 
         public string getSizeFirst(string maspham)
         {
@@ -26,5 +20,24 @@ namespace DAL
                         select sp.SIZESP ).First();
             return  masp;
         }
+        public IQueryable getALLSize(string masp)
+        {
+            var size = from s in ql.sizes
+                       where s.MASP == masp
+                       select s;
+            return size;
+        }
+        public bool insertSize(size size)
+        {
+            try
+            {
+                ql.sizes.InsertOnSubmit(size);
+                ql.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex) { return false; }
+        }
+
+
     }
 }

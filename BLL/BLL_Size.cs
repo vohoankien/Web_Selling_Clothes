@@ -20,5 +20,9 @@ namespace BLL
         {
             return dl.getSizeFirst(masp);   
         }
+        public bool insertSize(size size)
+        {
+            return dl.insertSize(size);
+        }
     }
 }

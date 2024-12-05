@@ -43,6 +43,33 @@ namespace DAL
             return query;
         }
 
+        public List<khuyenmai> getAllKhuyenMaiSP()
+        {
+            // Lấy dữ liệu kiểu ẩn danh từ cơ sở dữ liệu
+            var query = from tk in ql.khuyenmais
+                        select new
+                        {
+                            tk.MAKM,
+                            tk.TENKM,
+                            tk.NGAYBD,
+                            tk.NGAYKT,
+                            tk.PHANTRAMGIAM
+                        };
+
+            // Ánh xạ kết quả kiểu ẩn danh sang đối tượng khuyenmai
+            var danhSachKhuyenMai = query.ToList().Select(km => new khuyenmai
+            {
+                MAKM = km.MAKM,
+                TENKM = km.TENKM,
+                NGAYBD = km.NGAYBD,
+                NGAYKT = km.NGAYKT,
+                PHANTRAMGIAM = km.PHANTRAMGIAM
+            }).ToList();
+
+            return danhSachKhuyenMai;
+        }
+
+
 
         public bool insertKhuyenMai(khuyenmai nh)
         {

@@ -8,8 +8,15 @@ namespace ThuVien.ThietKeConTrols
     {
         public void ShowImage(string tenAnh)
         {
-            string imagePath = System.IO.Path.Combine(Application.StartupPath, "Images",tenAnh);
-            this.Image = new Bitmap(imagePath);
+            try
+            {
+                string imagePath = System.IO.Path.Combine(Application.StartupPath, "Images", tenAnh);
+                this.Image = new Bitmap(imagePath);
+            }
+            catch (Exception ex)
+            {
+                    MessageBox.Show("Lỗi",ex.Message);
+            }
         }
 
     }

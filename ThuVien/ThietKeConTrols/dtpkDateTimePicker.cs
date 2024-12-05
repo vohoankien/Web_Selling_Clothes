@@ -11,7 +11,7 @@ namespace ThuVien.ThietKeConTrols
         public dtpkDateTimePicker() 
         {
             this.Format = DateTimePickerFormat.Custom;
-            this.CustomFormat = "dd/MM/yyy";
+            this.CustomFormat = "dd/MM/yyyy";
         }
     }
 }

@@ -15,6 +15,10 @@ namespace BLL
         {
             return dl.getAllKhuyenMai();
         }
+        public List<khuyenmai> getAllKhuyenMaiSP()
+        {
+            return dl.getAllKhuyenMaiSP();
+        }
 
         public string GenerateMaKhuyenMai()
         {

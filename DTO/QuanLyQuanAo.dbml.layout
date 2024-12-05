@@ -194,7 +194,7 @@
         <classShapeMoniker Id="93fc6616-4363-43a4-a684-49f3c9bfeba4" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 12.786474202474); (6.35416666666667 : 12.786474202474 : JumpStart); (6.52083333333333 : 12.786474202474 : JumpEnd); (7.71875 : 12.786474202474); (7.71875 : 10.6074039713542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 12.786474202474); (4.26041666666667 : 12.786474202474 : JumpStart); (4.42708333333333 : 12.786474202474 : JumpEnd); (6.35416666666667 : 12.786474202474 : JumpStart); (6.52083333333333 : 12.786474202474 : JumpEnd); (7.71875 : 12.786474202474); (7.71875 : 10.6074039713542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QuanLyQuanAoDataContext/khuyenmai/khuyenmai_sanpham" />
       <nodes>
         <classShapeMoniker Id="4aad1224-f638-4fbb-931c-54f5b6bd3608" />

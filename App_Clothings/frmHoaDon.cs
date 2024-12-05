@@ -37,12 +37,12 @@ namespace App_Clothings
             if (report.Parameters["MaHD"] != null)
             {
                 report.Parameters["MaHD"].Value = maHD;
-                MessageBox.Show("Tham số MAHD trong báo cáo.", report.Parameters["MaHD"].Value.ToString());
             }
             else
             {
                 // Tham số MAHD chưa được khởi tạo
                 MessageBox.Show("Tham số MAHD không có trong báo cáo.");
+                return;
             }
             report.CreateDocument();
             //report.Parameters["MaHD"].Visible = false; // Không hiển thị tham số khi in
@@ -96,7 +96,7 @@ namespace App_Clothings
         public void loadTTHoaDon()
         {
             hoadon hd = bll_hoadon.findHoaDon(MaHD);
-            nguoidung nd = bll_nguoidung.findNguoiDung(maKH);
+            nguoidung nd = bll_nguoidung.findNguoiDungTheoMa(maKH);
             txtTenKH.Text = nd.TENND;
             txtSoDienThoai.Text =nd.SODIENTHOAI;
             txtSoLuong.Text = hd.SOLUONG.ToString();

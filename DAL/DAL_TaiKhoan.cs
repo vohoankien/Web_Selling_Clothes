@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DTO;
 using BCrypt.Net;
+using System.Runtime.InteropServices;
 namespace DAL
 {
     public class DAL_TaiKhoan
@@ -17,7 +18,7 @@ namespace DAL
         {
             var query = from tk in ql.taikhoanusers
                         join nd in ql.nguoidungs on tk.MAUSER equals nd.MAUSER
-                        join nq in ql.nhomquyens on tk.MAQUYEN equals nq.MAQUYEN
+                      
                         select new
                         {
                             tk.MAUSER,
@@ -26,7 +27,6 @@ namespace DAL
                             nd.EMAIL,
                             nd.DIACHI,
                             nd.SODIENTHOAI,
-                            nq.TENQUYEN
                         };
             return query;
         }
@@ -42,8 +42,10 @@ namespace DAL
             if (existingMaQuyen.Count > 0)
             {
                 var maxCode = existingMaQuyen
-                    .Select(m => int.Parse(m.Substring(2))) // Lấy phần số sau "MQ"
-                    .Max(); // Tìm số lớn nhất
+                .Where(m => m.StartsWith("TK") && m.Length > 2) // Kiểm tra chuỗi bắt đầu với "TK"
+                .Select(m => int.Parse(m.Substring(2))) // Lấy phần số sau "TK"
+                .Max(); // Tìm số lớn nhất
+
                 newCodeNumber = maxCode + 1; // Tăng lên 1
                                              // Định dạng mã quyền mới
                 string newMaQuyen = "TK" + newCodeNumber.ToString("D3"); // Định dạng thành MQ001, MQ002, ...
@@ -63,9 +65,17 @@ namespace DAL
 
         public bool verifyPassword(string inputPassword, string hashedPassword)
         {
-            return BCrypt.Net.BCrypt.Verify(inputPassword, hashedPassword);
+            try
+            {
+                bool kq = BCrypt.Net.BCrypt.Verify(inputPassword, hashedPassword);
+                return kq;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+       
         }
-
 
         public bool insertTaiKhoan(taikhoanuser quyen)
         {
@@ -87,6 +97,36 @@ namespace DAL
                       select n).FirstOrDefault();
             return nq;
         }
+        public taikhoanuser findTaiKhoanTheoTenvaEmail(string s)
+        {
+            var result = (from n in ql.taikhoanusers
+                          join nv in ql.thongtinadmins
+                          on n.MAUSER equals nv.MAUSER
+                          select new
+                          {
+                              n.TENTK,
+                              n.MAUSER,
+                              n.MAQUYEN,
+                              n.MATKHAU,
+                             Email =  nv.EMAIL,
+                          }).FirstOrDefault();
+
+            if (result != null)
+            {
+                return new taikhoanuser
+                {
+                    TENTK = result.TENTK,
+                    MAQUYEN = result.MAQUYEN,
+                    MATKHAU = result.MATKHAU,
+                    MAUSER = result.MAUSER,
+                    Email = result.Email
+                };
+            }
+
+            return null;
+        }
+
+
         public taikhoanuser findTaiKhoan(string s)
         {
             var nq = (from n in ql.taikhoanusers
@@ -121,8 +161,11 @@ namespace DAL
             }
             catch (Exception ex)
             {
+                Console.WriteLine($"Error: {ex.Message}");
                 return false;
             }
         }
+
+
     }
 }

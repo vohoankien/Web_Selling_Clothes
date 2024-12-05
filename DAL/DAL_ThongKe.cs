@@ -29,19 +29,35 @@ namespace DAL
 
         public List<hoadon> getDoanhThuTheoThoiGian(DateTime ngaybd, DateTime ngaykt)
         {
-            var result = ql.proc_ThongKeDoanhThuTheoNgay(ngaybd,ngaykt); 
+            var result = ql.proc_ThongKeDoanhThuTheoThang(ngaybd,ngaykt); 
 
             List<hoadon> doanhThuNgay = result
                 .Select(x => new hoadon
                 {
                     // Chuyển đổi các thuộc tính từ proc_DanhSachSanPhamBanChayResult sang sanpham
-                    Ngay = x.Ngay.ToString(),  // Ví dụ, nếu proc_DanhSachSanPhamBanChayResult có thuộc tính TenSanPham
-                    Doanhthu = (long)x.DoanhThuNgay  // Và SoLuongBan cũng là một thuộc tính trong proc_DanhSachSanPhamBanChayResult
+                    Thang = x.Thang.ToString(),  // Ví dụ, nếu proc_DanhSachSanPhamBanChayResult có thuộc tính TenSanPham
+                    Doanhthu = (long)x.DoanhThuThang  // Và SoLuongBan cũng là một thuộc tính trong proc_DanhSachSanPhamBanChayResult
                 }).ToList();
 
             return doanhThuNgay;
         }
 
+
+        public List<hoadon> getKhachHangThongKe()
+        {
+            var result = ql.proc_getKhachHangThongke();
+
+            List<hoadon> doanhThuNgay = result
+                .Select(x => new hoadon
+                {
+                    // Chuyển đổi các thuộc tính từ proc_DanhSachSanPhamBanChayResult sang sanpham
+                    Tennguoidung = x.TENND,  // Ví dụ, nếu proc_DanhSachSanPhamBanChayResult có thuộc tính TenSanPham
+                    Doanhthu = (long)x.TongTien  ,// Và SoLuongBan cũng là một thuộc tính trong proc_DanhSachSanPhamBanChayResult
+                    SOLUONG = x.SoLuongHoaDon
+                }).ToList();
+
+            return doanhThuNgay;
+        }
 
 
     }

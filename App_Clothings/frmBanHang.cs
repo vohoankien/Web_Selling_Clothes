@@ -137,10 +137,10 @@ namespace App_Clothings
                 tk.MAUSER = bll_taikhoan.createAutoMaQuyen();
                 tk.TENTK = txtEmail.Text;
                 tk.MATKHAU = txtSoDienThoai.Text;
-                bool kq = bll_taikhoan.insertTaiKhoan(tk );
+                bool kq = bll_taikhoan.insertTaiKhoan(tk);
                 if( !kq)
                 {
-                    MessageBox.Show("Tạo tài khoản a  cho khách hàng không thành công.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Tạo tài khoản cho khách hàng không thành công.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 nguoidung nd = new nguoidung();
@@ -158,9 +158,9 @@ namespace App_Clothings
                 }
                 loadKhachHang();
                 MessageBox.Show("Xác nhận thông tin thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                txtMaKhachHang.Text = nd.MAND;
             }
-            nguoidung nguoi = bll_nguoidung.findNguoiDung(txtMaKhachHang.Text);
+            nguoidung nguoi = bll_nguoidung.findNguoiDungTheoTen(txtMaKhachHang.Text);
             hoadon hd = new hoadon();
             hd.MAND = nguoi.MAND;
             hd.MAHD = bll_hoadon.GenerateMaHoaDon();

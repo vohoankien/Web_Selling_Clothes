@@ -240,4 +240,20 @@
       <Column Name="DoanhThuNgay" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.proc_ThongKeDoanhThuTheoThang" Method="proc_ThongKeDoanhThuTheoThang">
+    <Parameter Name="NgayBatDau" Parameter="ngayBatDau" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="NgayKetThuc" Parameter="ngayKetThuc" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="proc_ThongKeDoanhThuTheoThangResult">
+      <Column Name="Nam" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Thang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DoanhThuThang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.proc_getKhachHangThongke" Method="proc_getKhachHangThongke">
+    <ElementType Name="proc_getKhachHangThongkeResult">
+      <Column Name="SoLuongHoaDon" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TENND" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="TongTien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

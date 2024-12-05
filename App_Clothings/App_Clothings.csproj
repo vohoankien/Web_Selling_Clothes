@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.ML.4.0.0\build\netstandard2.0\Microsoft.ML.props" Condition="Exists('..\packages\Microsoft.ML.4.0.0\build\netstandard2.0\Microsoft.ML.props')" />
+  <Import Project="..\packages\Microsoft.ML.CpuMath.4.0.0\build\netstandard2.0\Microsoft.ML.CpuMath.props" Condition="Exists('..\packages\Microsoft.ML.CpuMath.4.0.0\build\netstandard2.0\Microsoft.ML.CpuMath.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -10,11 +12,14 @@
     <AssemblyName>App_Clothings</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +27,9 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PreferNativeArm64>true</PreferNativeArm64>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +39,30 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <PreferNativeArm64>true</PreferNativeArm64>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Charts.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -65,12 +97,119 @@
     <Reference Include="DevExpress.XtraScheduler.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraScheduler.v22.2.Core.Desktop, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Google.Protobuf, Version=3.29.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.29.0\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.4.2.13, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.1.4.2\lib\netstandard2.0\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.9.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.HashCode.6.0.0\lib\net462\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.Memory, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Memory.9.0.0\lib\net462\Microsoft.Bcl.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.Numerics, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Numerics.9.0.0\lib\net462\Microsoft.Bcl.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ML.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ML.4.0.0\lib\netstandard2.0\Microsoft.ML.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ML.CpuMath, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ML.CpuMath.4.0.0\lib\netstandard2.0\Microsoft.ML.CpuMath.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ML.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ML.4.0.0\lib\netstandard2.0\Microsoft.ML.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ML.DataView, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ML.DataView.4.0.0\lib\netstandard2.0\Microsoft.ML.DataView.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ML.ImageAnalytics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ML.ImageAnalytics.4.0.0\lib\netstandard2.0\Microsoft.ML.ImageAnalytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ML.KMeansClustering, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ML.4.0.0\lib\netstandard2.0\Microsoft.ML.KMeansClustering.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ML.PCA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ML.4.0.0\lib\netstandard2.0\Microsoft.ML.PCA.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ML.StandardTrainers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ML.4.0.0\lib\netstandard2.0\Microsoft.ML.StandardTrainers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ML.Tokenizers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ML.Tokenizers.1.0.0\lib\netstandard2.0\Microsoft.ML.Tokenizers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ML.TorchSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ML.TorchSharp.0.22.0\lib\netstandard2.0\Microsoft.ML.TorchSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ML.Transforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ML.4.0.0\lib\netstandard2.0\Microsoft.ML.Transforms.dll</HintPath>
+    </Reference>
+    <Reference Include="MLModel1_ConsoleApp1">
+      <HintPath>..\MLModel1_ConsoleApp1\bin\Debug\net8.0\MLModel1_ConsoleApp1.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp, Version=3.116.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\SkiaSharp.3.116.0\lib\net462\SkiaSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.6.0\lib\net462\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.CodeDom, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.CodeDom.9.0.0\lib\net462\System.CodeDom.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.9.0.0\lib\net462\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.IO.Pipelines, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.9.0.0\lib\net462\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.6.0\lib\net462\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Tensors, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Tensors.9.0.0\lib\net462\System.Numerics.Tensors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics.Vectors, Version=4.1.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.6.0\lib\net462\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.1.0\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Text.Encodings.Web, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.9.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.9.0.0\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Channels, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Channels.9.0.0\lib\net462\System.Threading.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.6.0\lib\net462\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
@@ -82,6 +221,9 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="TorchSharp, Version=0.103.1.0, Culture=neutral, PublicKeyToken=67b0e5e1da516a1c, processorArchitecture=MSIL">
+      <HintPath>..\packages\TorchSharp.0.103.1\lib\netstandard2.0\TorchSharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="frmBanHang.cs">
@@ -96,35 +238,83 @@
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDanhGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDanhGia.Designer.cs">
+      <DependentUpon>frmDanhGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDoiMatKhau.Designer.cs">
+      <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHinhAnh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHinhAnh.Designer.cs">
+      <DependentUpon>frmHinhAnh.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmHoaDon.Designer.cs">
       <DependentUpon>frmHoaDon.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLoaiSanPham.cs">
+    <Compile Include="frmKhuyenMai.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLoaiSanPham.Designer.cs">
-      <DependentUpon>frmLoaiSanPham.cs</DependentUpon>
+    <Compile Include="frmKhuyenMai.Designer.cs">
+      <DependentUpon>frmKhuyenMai.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmQuanLyKho.cs">
+    <Compile Include="frmLSP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmQuanLyKho.Designer.cs">
-      <DependentUpon>frmQuanLyKho.cs</DependentUpon>
+    <Compile Include="frmLSP.Designer.cs">
+      <DependentUpon>frmLSP.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmQuanLySanPham.cs">
+    <Compile Include="frmQLSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmQuanLySanPham.Designer.cs">
-      <DependentUpon>frmQuanLySanPham.cs</DependentUpon>
+    <Compile Include="frmQLSanPham.Designer.cs">
+      <DependentUpon>frmQLSanPham.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmQuanLyTaiKhoan.cs">
+    <Compile Include="frmQuanLyHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmQuanLyTaiKhoan.Designer.cs">
-      <DependentUpon>frmQuanLyTaiKhoan.cs</DependentUpon>
+    <Compile Include="frmQuanLyHoaDon.Designer.cs">
+      <DependentUpon>frmQuanLyHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuanLyNguoiDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanLyNguoiDung.Designer.cs">
+      <DependentUpon>frmQuanLyNguoiDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuanLyNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanLyNhanVien.Designer.cs">
+      <DependentUpon>frmQuanLyNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuenMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuenMatKhau.Designer.cs">
+      <DependentUpon>frmQuenMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSize.Designer.cs">
+      <DependentUpon>frmSize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTHieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTHieu.Designer.cs">
+      <DependentUpon>frmTHieu.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThongKeDT.cs">
       <SubType>Form</SubType>
@@ -132,11 +322,17 @@
     <Compile Include="frmThongKeDT.Designer.cs">
       <DependentUpon>frmThongKeDT.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThuongHieu.cs">
+    <Compile Include="frmThongKeKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmThuongHieu.Designer.cs">
-      <DependentUpon>frmThuongHieu.cs</DependentUpon>
+    <Compile Include="frmThongKeKhachHang.Designer.cs">
+      <DependentUpon>frmThongKeKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThongTin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThongTin.Designer.cs">
+      <DependentUpon>frmThongTin.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -146,29 +342,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QLKho.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QLKho.Designer.cs">
-      <DependentUpon>QLKho.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLyDanhGia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLyDanhGia.Designer.cs">
-      <DependentUpon>QuanLyDanhGia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmQuanLyKhuyenMai.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmQuanLyKhuyenMai.Designer.cs">
-      <DependentUpon>frmQuanLyKhuyenMai.cs</DependentUpon>
-    </Compile>
     <Compile Include="rptHoaDon.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="rptHoaDon.Designer.cs">
       <DependentUpon>rptHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptHoaDonKhachHang.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptHoaDonKhachHang.Designer.cs">
+      <DependentUpon>rptHoaDonKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptNhanVien.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptNhanVien.Designer.cs">
+      <DependentUpon>rptNhanVien.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="frmBanHang.resx">
       <DependentUpon>frmBanHang.cs</DependentUpon>
@@ -176,26 +366,50 @@
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDanhGia.resx">
+      <DependentUpon>frmDanhGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDoiMatKhau.resx">
+      <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHinhAnh.resx">
+      <DependentUpon>frmHinhAnh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmHoaDon.resx">
       <DependentUpon>frmHoaDon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLoaiSanPham.resx">
-      <DependentUpon>frmLoaiSanPham.cs</DependentUpon>
+    <EmbeddedResource Include="frmKhuyenMai.resx">
+      <DependentUpon>frmKhuyenMai.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmQuanLyKho.resx">
-      <DependentUpon>frmQuanLyKho.cs</DependentUpon>
+    <EmbeddedResource Include="frmLSP.resx">
+      <DependentUpon>frmLSP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmQuanLySanPham.resx">
-      <DependentUpon>frmQuanLySanPham.cs</DependentUpon>
+    <EmbeddedResource Include="frmQLSanPham.resx">
+      <DependentUpon>frmQLSanPham.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmQuanLyTaiKhoan.resx">
-      <DependentUpon>frmQuanLyTaiKhoan.cs</DependentUpon>
+    <EmbeddedResource Include="frmQuanLyHoaDon.resx">
+      <DependentUpon>frmQuanLyHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLyNguoiDung.resx">
+      <DependentUpon>frmQuanLyNguoiDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLyNhanVien.resx">
+      <DependentUpon>frmQuanLyNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuenMatKhau.resx">
+      <DependentUpon>frmQuenMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSize.resx">
+      <DependentUpon>frmSize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTHieu.resx">
+      <DependentUpon>frmTHieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThongKeDT.resx">
       <DependentUpon>frmThongKeDT.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThuongHieu.resx">
-      <DependentUpon>frmThuongHieu.cs</DependentUpon>
+    <EmbeddedResource Include="frmThongKeKhachHang.resx">
+      <DependentUpon>frmThongKeKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -211,18 +425,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="QLKho.resx">
-      <DependentUpon>QLKho.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyDanhGia.resx">
-      <DependentUpon>QuanLyDanhGia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmQuanLyKhuyenMai.resx">
-      <DependentUpon>frmQuanLyKhuyenMai.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="rptHoaDon.resx">
       <DependentUpon>rptHoaDon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="rptHoaDonKhachHang.resx">
+      <DependentUpon>rptHoaDonKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptNhanVien.resx">
+      <DependentUpon>rptNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="MLModel1.mbconfig" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -248,10 +461,6 @@
     <ProjectReference Include="..\ThuVien\ThuVien.csproj">
       <Project>{DD04B623-5C0F-4973-BBD6-A3DCBCF050BB}</Project>
       <Name>ThuVien</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Web_Selling_Clothes\Web_Selling_Clothes.csproj">
-      <Project>{2ddcbee9-4f06-40c2-987f-ec315a87e20a}</Project>
-      <Name>Web_Selling_Clothes</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -615,6 +824,60 @@
     <Content Include="Images\Indigo5.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\insertimage.svg" />
+    <None Include="Resources\open2.svg" />
+    <None Include="Resources\actions_add.svg" />
+    <None Include="Resources\bo_price_item.svg" />
+    <None Include="Resources\actions_comment1.svg" />
+    <None Include="Resources\fitboundstogrid.svg" />
+    <None Include="Resources\editcomment.svg" />
+    <None Include="Resources\previouscomment.svg" />
+    <None Include="Resources\insertcombobox.svg" />
+    <None Include="Resources\actions_comment.svg" />
+    <None Include="Resources\richeditclearformatting.svg" />
+    <None Include="Resources\markcomplete.svg" />
+    <None Include="Resources\bo_vendor.svg" />
+    <None Include="Resources\bo_localization.svg" />
+    <None Include="Resources\salesanalysis_32x32.png" />
+    <None Include="Resources\boproduct_32x32.png" />
+    <None Include="Resources\loadpagesetup_32x32.png" />
+    <None Include="Resources\bouser_16x16.png" />
+    <None Include="Resources\bouser_32x32.png" />
+    <None Include="Resources\allowuserstoeditranges.svg" />
+    <None Include="Resources\usergroup_16x162.png" />
+    <None Include="Resources\usergroup_32x323.png" />
+    <None Include="Resources\formatastable_32x32.png" />
+    <None Include="Resources\contact_32x32.png" />
+    <None Include="Resources\spellcheckasyoutype_32x32.png" />
+    <None Include="Resources\itemtypechecked.svg" />
+    <None Include="Resources\bo_document.svg" />
+    <None Include="Resources\functionsinformation1.svg" />
+    <None Include="Resources\functionsinformation.svg" />
+    <None Include="Resources\security_key1.svg" />
+    <None Include="Resources\cancel_16x16.png" />
+    <None Include="Resources\cancel_32x321.png" />
+    <None Include="Resources\customer_16x161.png" />
+    <None Include="Resources\customer_32x321.png" />
+    <None Include="Resources\cancel_32x32.png" />
+    <None Include="Resources\apply_32x32.png" />
+    <None Include="Resources\hiddentext_32x32.png" />
+    <None Include="Resources\formatnumbertext_32x32.png" />
+    <None Include="Resources\text2_32x32.png" />
+    <None Include="Resources\usergroup_32x322.png" />
+    <None Include="Resources\bo_lead.svg" />
+    <None Include="Resources\del.svg" />
+    <None Include="Resources\security_key.svg" />
+    <None Include="Resources\bo_user.svg" />
+    <None Include="Resources\removepivotfield_16x16.png" />
+    <None Include="Resources\removepivotfield_32x32.png" />
+    <None Include="Resources\bo_customer.svg" />
+    <None Include="Resources\charttype_radarline.svg" />
+    <None Include="Resources\filter_32x32.png" />
+    <None Include="Resources\renamequery.svg" />
+    <None Include="Resources\selectdatamember.svg" />
+    <None Include="Resources\printincludeevaluations_32x321.png" />
+    <None Include="Resources\viewsetting_16x16.png" />
+    <None Include="Resources\viewsetting_32x32.png" />
     <None Include="Resources\bar_32x321.png" />
     <None Include="Resources\drilldownonseries_pie_32x32.png" />
     <None Include="Resources\kpi_32x32.png" />
@@ -1123,5 +1386,19 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup Label="MLModel1">
+    <None Include="MLModel1.mlnet">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.ML.CpuMath.4.0.0\build\netstandard2.0\Microsoft.ML.CpuMath.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ML.CpuMath.4.0.0\build\netstandard2.0\Microsoft.ML.CpuMath.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ML.4.0.0\build\netstandard2.0\Microsoft.ML.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ML.4.0.0\build\netstandard2.0\Microsoft.ML.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ML.4.0.0\build\netstandard2.0\Microsoft.ML.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ML.4.0.0\build\netstandard2.0\Microsoft.ML.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.ML.4.0.0\build\netstandard2.0\Microsoft.ML.targets" Condition="Exists('..\packages\Microsoft.ML.4.0.0\build\netstandard2.0\Microsoft.ML.targets')" />
 </Project>

@@ -15,23 +15,27 @@ namespace BLL
         {
             return dl.getAllQuyen();
         }
+        public List<nhomquyen> getQuyenNhanVien()
+        {
+            return dl.getQuyenNhanVien();
+        }
         public string createAutoMaQuyen()
         {
             return dl.GenerateMaQuyen();
-        }   
-        
+        }
+
         public bool insertQuyen(nhomquyen nq)
         {
-            return dl.insertQuyen(nq);  
+            return dl.insertQuyen(nq);
         }
         public bool deleteQuyen(nhomquyen nq)
         {
             return dl.deleteQuyen(nq);
         }
 
-        public bool updateQuyen(string ten,nhomquyen nq)
+        public bool updateQuyen(string ten, nhomquyen nq)
         {
-            return dl.updateQuyen(ten,nq);
+            return dl.updateQuyen(ten, nq);
         }
 
         public nhomquyen findQuyen(string s)
@@ -39,5 +43,10 @@ namespace BLL
             return dl.findQuyen(s);
         }
 
+
+        public nhomquyen findMaQuyen(string s)
+        {
+            return dl.findMaQuyen(s);
+        }
     }
 }

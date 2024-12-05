@@ -26,12 +26,20 @@ namespace BLL
         {
             return dl.insertNguoiDung(nd);
         }
+        public nguoidung findNguoiDungTheoMa(string s)
+        {
+            return dl.findNguoiDungTheoMa(s);
 
+        }
         public nguoidung findNguoiDung(string s)
         {
             return dl.findNguoiDung(s);
         }
-
+        public nguoidung findNguoiDungTheoTen(string s)
+        {
+            return dl.findNguoiDungTheoTen(s);
+        }
+        
         public bool deleteNguoiDung(nguoidung tk)
         {
             return dl.deleteNguoiDung(tk);
